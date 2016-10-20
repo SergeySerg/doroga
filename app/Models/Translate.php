@@ -15,6 +15,8 @@ class Translate extends Model {
             $field = $pieces[0];
         if ($lang == 'en')
             $field = $pieces[1];
+        if ($lang == 'ru')
+            $field = $pieces[2];
         return $field;
     }
 
