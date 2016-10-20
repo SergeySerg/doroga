@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PremiumClub | Панель керування</title>
+    <title>ДОРОГА ДОДОМУ | Панель керування</title>
 
     <link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
@@ -80,9 +80,9 @@
             <a href="#" class="brand">
                 <img style="display: block;
     position: absolute;
-    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo-header.png') }}" alt="PremiumClub" />
+    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo-header.png') }}" alt="ДОРОГА ДОДОМУ" />
                 <small style="margin-left: 40px;">
-                    PremiumClub
+                    ДОРОГА ДОДОМУ
                 </small>
             </a><!--/.brand-->
 
