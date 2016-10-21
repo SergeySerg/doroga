@@ -18,9 +18,11 @@ class BackendInit {
 
 	public function handle($request, Closure $next)
 	{
+		//Подключение в Backend url типа
+		$url = url('admin30x5');
 		//Подключение в Backend version
 		view()->share('version', config('app.version'));
-
+		view()->share('url', $url);
 
 		return $next($request);
 	}

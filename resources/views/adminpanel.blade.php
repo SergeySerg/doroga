@@ -78,9 +78,9 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <a href="#" class="brand">
-                <img style="display: block;
+               {{--Доготип <img style="display: block;
     position: absolute;
-    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo-header.png') }}" alt="ДОРОГА ДОДОМУ" />
+    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo-header.png') }}" alt="ДОРОГА ДОДОМУ" />--}}
                 <small style="margin-left: 40px;">
                     ДОРОГА ДОДОМУ
                 </small>
@@ -153,53 +153,54 @@
 
         <ul class="nav nav-list">
 
-            <li @if(Request::is('admin30x5/articles/hotels'))class="active"@endif>
-            <a href="/admin30x5/articles/hotel">
+            <li @if(Request::is('*/hotel'))class="active"@endif>
+            <a href="{{ $url }}/articles/hotel">
                 <i class="icon-text-width"></i>
                 <span class="menu-text"> Готель інфо </span>
             </a>
             </li>
 
-            <li @if(Request::is('admin30x5/articles/rooms'))class="active"@endif>
-                <a href="/admin30x5/articles/rooms">
+            <li @if(Request::is('*/rooms'))class="active"@endif>
+                <a href="{{ $url }}/articles/rooms">
                     <i class="icon-home"></i>
                     <span class="menu-text"> Номери </span>
                 </a>
             </li>
 
-            <li @if(Request::is('admin30x5/articles/services'))class="active"@endif>
-                <a href="/admin30x5/articles/services">
+            <li @if(Request::is('*/services'))class="active"@endif>
+                <a href="{{ $url }}/articles/services">
                     <i class="icon-list"></i>
                     <span class="menu-text"> Послуги </span>
                 </a>
             </li>
 
-            <li @if(Request::is('admin30x5/articles/events'))class="active"@endif>
-                <a href="/admin30x5/articles/events">
+            {{-- <li @if(Request::is('admin30x5/article/events'))class="active"@endif>
+                <a href="{{ $url }}/articles/events">
                     <i class="icon-hospital"></i>
                     <span class="menu-text"> Події </span>
                 </a>
-            </li>
-            <li @if(Request::is('admin30x5/articles/gallery'))class="active"@endif>
-                <a href="/admin30x5/articles/gallery">
+            </li> --}}
+            <li @if(Request::is('*/gallery'))class="active"@endif>
+                <a href="{{ $url }}/articles/gallery">
                     <i class="icon-picture"></i>
                     <span class="menu-text"> Галерея </span>
                 </a>
             </li>
-            <li @if(Request::is('admin30x5/articles/slider'))class="active"@endif>
-            <a href="/admin30x5/articles/slider">
+            <li @if(Request::is('*/slider'))class="active"@endif>
+            <a href="{{ $url }}/articles/slider">
                 <i class="icon-picture"></i>
                 <span class="menu-text"> Слайдер </span>
             </a>
-            </li @if(Request::is('admin30x5/articles/seo'))class="active"@endif>
-            <li>
-                <a href="/admin30x5/articles/seo">
+            </li>
+            <li @if(Request::is('*/seo'))class="active"@endif>
+                <a href="{{ $url }}/articles/seo">
+
                     <i class="icon-file-alt"></i>
                     <span class="menu-text"> SEO </span>
                 </a>
             </li>
-            <li @if(Request::is('admin30x5/texts'))class="active"@endif>
-            <a href="/admin30x5/texts">
+            <li @if(Request::is('*/texts'))class="active"@endif>
+            <a href="{{ $url }}/texts">
                 <i class="icon-hospital"></i>
                 <span class="menu-text"> Текстові блоки </span>
             </a>
