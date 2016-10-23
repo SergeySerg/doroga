@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ App::getLocale() }}">
+<html lang="{{ App::getLocale() }}" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
 	<title>Premium Club</title>
@@ -61,20 +61,21 @@
 						</a>
 						<div class="nav-collapse collapse">
 							<ul class="nav">
-								<li class="active"><a href="index.html">Головна</a></li>
-								<li><a href="about.html">Номери</a></li>
-								<li><a href="services.html">Послуги</a></li>
-								<li><a href="pricing.html">Фотогалерея</a></li>
-								<li><a href="contact.html">Контакти</a></li>
+								<li><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
+								<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
+								<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
+								<li><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
+								<li><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
+
 							</ul>
+							<span class="lang">
+								@foreach($langs as $lang)
+									<a href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a>
+								@endforeach
+							</span>
 						</div>
 					</div>
 				</div>
-
-					@foreach($langs as $lang)
-					<a href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a>
-					@endforeach
-
 			</div>
 			<!--end: Navigation -->
 
@@ -111,153 +112,7 @@
 <div >
 
 	<!--start: Container -->
-	<div class="container">
-
-		<div class="row">
-			<!-- start: Slider -->
-			<div id="gallery" style="
-				display:none;
-				margin-top: -86px;
-				border-radius: 8px;
-				border: 5px solid #f6f6f6;
-				z-index:9999;
-				margin-bottom: 20px">
-
-				<img alt="Будь-який заголовок"
-					 src="http://www.karpaty.info/data/objects/img/606/out16.jpg"
-					 data-image="http://www.karpaty.info/data/objects/img/606/out16.jpg"
-					 data-description="Будь-який опис під ним. Це все можна міняти з адмін панелі">
-
-				<img alt="Будь-який заголовок"
-					 src="http://www.karpaty.info/data/objects/img/606/out10.jpg"
-					 data-image="http://www.karpaty.info/data/objects/img/606/out10.jpg"
-					 data-description="Будь-який опис під ним. Це все можна міняти з адмін панелі">
-
-				<img alt="Будь-який заголовок"
-					 src="http://www.karpaty.info/data/objects/img/606/out9.jpg"
-					 data-image="http://www.karpaty.info/data/objects/img/606/out9.jpg"
-					 data-description="Будь-який опис під ним. Це все можна міняти з адмін панелі">
-
-				<img alt="Будь-який заголовок"
-					 src="http://www.karpaty.info/data/objects/img/606/out8.jpg"
-					 data-image="http://www.karpaty.info/data/objects/img/606/out8.jpg"
-					 data-description="Будь-який опис під ним. Це все можна міняти з адмін панелі">
-
-
-				<img alt="Будь-який заголовок"
-					 src="http://www.karpaty.info/data/objects/img/606/out7.jpg"
-					 data-image="http://www.karpaty.info/data/objects/img/606/out7.jpg"
-					 data-description="Будь-який опис під ним. Це все можна міняти з адмін панелі">
-
-			</div>
-			<!-- end: Slider -->
-		</div>
-
-		<!--start: Row -->
-		<div class="row">
-
-			<div class="span12">
-
-				<!-- start: About Us -->
-				<div id="about">
-					<div class="title"><h3>Про нас</h3></div>
-					<p>Приватна садиба "Дорога додому". На першому поверсі камінний зал і кухня,оснащена всім необхідним для приготування їжі.Окремо- в буд господарів знається 2 поверх(2 кімнати зі зручностями в номерах та балконами івеликим холом з меблями з лози. На території садиби є сауна з контрастним басейном,каміном. Для дітей-батут,дерев'яні будиночки,пісочниця,гірка,качелі. Територія дуже зелена,багато фруктових і хвойних дерев,квітів,декоративних насаджень. В котеджі дуже багато старовинних автентичних речей.Ще. на подвір'ї є альтанка і мангал.До послуг, що надасть є ще приготування смачної домашн.їжі,паркова,екскурсії.Відстань до центральної дороги-600 метрів,до річки200.Тихе і затишне місце</p>
-				</div>
-				<!-- end: About Us -->
-
-
-			</div>
-
-		</div>
-		<!--end: Row-->
-
-		<!--start: Row -->
-		<div class="row">
-
-			<div class="span12">
-
-				<div class="title"><h3>Послуги</h3></div>
-
-			</div>
-
-		</div>
-		<!--end: Row-->
-
-		<!-- start: Row -->
-		<div class="row">
-
-			<!-- start: Icon Boxes -->
-			<div class="icons-box-vert-container">
-
-
-				<!-- start: Icon Box Start -->
-				<div class="span6">
-					<div class="icons-box-vert">
-						<a href="#">
-							<img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out20.jpg" data-holder-rendered="true" >
-						</a>
-						<div class="icons-box-vert-info">
-							<h3>Дитячий майданчик</h3>
-							<p>Для дітей облаштовано батут, дерев'яні будиночки, пісочниця, гірка, качелі.</p>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<!-- end: Icon Box-->
-
-				<!-- start: Icon Box Start -->
-				<div class="span6">
-					<div class="icons-box-vert">
-						<a href="#">
-							<img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out20.jpg" data-holder-rendered="true" >
-						</a>
-						<div class="icons-box-vert-info">
-							<h3>Сауна</h3>
-							<p>На території садиби є сауна з контрастним басейном та каміном.</p>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<!-- end: Icon Box -->
-
-				<!-- start: Icon Box Start -->
-				<div class="span6">
-					<div class="icons-box-vert">
-						<a href="#">
-							<img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out17.jpg" data-holder-rendered="true" >
-						</a>
-						<div class="icons-box-vert-info">
-							<h3>Альтанка</h3>
-							<p>Ще для відпочинку наших гостей доступні альтанка і мангал що розміщені на подвір'ї.</p>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<!-- end: Icon Box -->
-
-				<!-- start: Icon Box Start -->
-				<div class="span6">
-					<div class="icons-box-vert">
-						<a href="#">
-							<img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://static2.karpaty.info/data/objects/img/606/out18_tn.jpg" data-holder-rendered="true" >
-						</a>
-						<div class="icons-box-vert-info">
-							<h3>Паркінг</h3>
-							<p>До послуг наших клієнтів доступне безкоштовне паркомісце на території садиби.</p>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<!-- end: Icon Box -->
-
-			</div>
-			<!-- end: Icon Boxes -->
-			<div class="clear"></div>
-		</div>
-		<!-- end: Row -->
-
-
-	</div>
+	@yield('content')
 	<!--end: Container-->
 
 
@@ -297,15 +152,11 @@
 
 					<ul id="footer-nav">
 
-						<li><a href="index.html">Головна</a></li>
-
-						<li><a href="about.html">Номери</a></li>
-
-						<li><a href="services.html">Послуги</a></li>
-
-						<li><a href="pricing.html">Фотогалерея</a></li>
-
-						<li><a href="contact.html">Контакти</a></li>
+						<li><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
+						<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
+						<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
+						<li><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
+						<li><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
 
 					</ul>
 

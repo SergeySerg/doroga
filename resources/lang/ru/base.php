@@ -13,16 +13,12 @@ return [
 	|
 	*/
 /* Header */
-	'hotel' => 'Home',
-	'rooms' => 'Rooms',
-	'services' => 'Services',
-	'events' => 'Events',
-	'gallery' => 'Gallery',
-	'contacts' => 'Contacts',
-	'booking' => 'Booking',
-	'tour' => '3D-tour',
-	'menu' => 'Menu',
-	'address' => '78500, Yaremche, 50 Dovbush str, Ivano-Frankivsk region',
+	'hotel' => 'Главная',
+	'rooms' => 'Номера',
+	'services' => 'Услуги',
+	'gallery' => 'Галлерея',
+	'contacts' => 'Контакты',
+	'menu' => 'Меню',
 	/* End Header */
 /* Booking */
 	'arrival' => 'Date of arrival',
@@ -31,33 +27,33 @@ return [
 	'more' => 'More',
 /* End Booking */
 /* Hotel Page */
-	'hotelcontenttitle' => 'At us you will find',
-	'aboutus' => 'About us',
+	'hotelcontenttitle' => 'У нас ви найдете',
+	'aboutus' => 'О нас',
 /* End Hotel Page */
 /* Rooms Page */
-	'roomscontenttitle' => 'Rooms',
-	'quantity' => 'Quantity',
-	'currency' => 'uah',
-    'cost' => 'Cost',
-    'conveniences' => 'Amenities',
+	'roomscontenttitle' => 'Номера',
+	'quantity' => 'Количество',
+	'currency' => 'грн',
+    'cost' => 'Стоимость',
+    'conveniences' => 'Удобства',
 /* End Rooms Page */
 /* Services Page */
-	'servicescontenttitle' => 'Services',
+	'servicescontenttitle' => 'Услуги',
 	'visit' => 'Visit',
 /* End Services Page */
 /* Events Page */
 	'eventscontenttitle' => 'Events',
 /* End Events Page */
 /* Gallery Page */
-	'gallerycontenttitle' => 'Gallery',
+	'gallerycontenttitle' => 'Галлерея',
 /* End Gallery Page */
 /* Footer*/
-	'hotelphoto' => 'Hotels photo ',
-	'callback' => 'Write us',
-	'name' => 'Your Name',
-	'email' => 'Your e-mail',
-	'message' => 'Your message',
-	'send' => 'Send',
+	'hotelphoto' => 'Фото отеля ',
+	'callback' => 'Напишите нам',
+	'name' => 'Ваше имя',
+	'email' => 'Ваш e-mail',
+	'message' => 'Текст сообщения',
+	'send' => 'Отправить',
 	'booking' => 'Booking',
 /* End Footer */
 

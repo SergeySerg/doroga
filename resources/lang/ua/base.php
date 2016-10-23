@@ -33,6 +33,7 @@ return [
 	/* End Booking */
 	/* Hotel Page */
 	'hotelcontenttitle' => 'У нас ви знайдете',
+	'aboutus' => 'Про нас',
 	/* End Hotel Page */
 	/* Rooms Page */
 	'roomscontenttitle' => 'Номери',

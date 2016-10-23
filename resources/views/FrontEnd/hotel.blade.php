@@ -2,105 +2,167 @@
 
 @section('content')
 
+<div class="container">
 
-
-
-
-    <div class="slider">
-
-
-        <div id="webstudio-slider" style="display:none;">
+    <div class="row">
+        <!-- start: Slider -->
+        <div id="gallery" style="				display:none;
+				margin-top: -86px;
+				border-radius: 8px;
+				border: 5px solid #f6f6f6;
+				z-index:9999;
+				margin-bottom: 20px">
             @foreach($slides as $slide)
 
-                @if(count($slide->getImages()) > 0)
+            @if(count($slide->getImages()) > 0)
 
-                        <img alt="{{$slide->getTranslate('title')}}" src="/{{$slide->getImages()[0]['full']}}"
-                        data-image="/{{$slide->getImages()[0]['full']}}"
-                        id="img-{{$slide->id}}"
-                        data-description=" {{$slide->getTranslate('description')}}"
-                        data-link="jhjhjhj111">
+            <img alt="{{$slide->getTranslate('title')}}" src="/{{$slide->getImages()[0]['full']}}"
+                 data-image="/{{$slide->getImages()[0]['full']}}"
+                 id="img-{{$slide->id}}"
+                 data-description=" {{$slide->getTranslate('description')}}"
+                 data-link="jhjhjhj111">
 
-                @endif
-            
+            @endif
+
             @endforeach
+
+        </div>
+        <!-- end: Slider -->
+    </div>
+
+    <!--start: Row -->
+    <div class="row">
+
+        <div class="span12">
+
+            <!-- start: About Us -->
+            <div id="about">
+                <div class="title"><h3>{{ trans('base.aboutus') }}</h3></div>
+                <p>{!!  $hotel -> getTranslate('description') !!}</p>
+            </div>
+            <!-- end: About Us -->
+
+
         </div>
 
     </div>
+    <!--end: Row-->
 
-    {{--<div id="3d-tour">
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            $(function(){
-                $('#3d-tour').html('<iframe src="http://www.visitor.ee/360/pc/html5/main.html" style="width: 100%; height: 470px; border: none; margin-bottom: -5px" frameborder="none"></iframe>');
-            });
-        });
-    </script>--}}
+    <!--start: Row -->
+    <div class="row">
 
-    <div class="booking clearfix">
+        <div class="span12">
 
-        <div class="key"><img src="{{ asset('/img/key.png') }}" alt=""></div>
-
-        <div class="fast-booking">
-
-            <h2>{{ trans('base.fast') }}</h2>
-            <h2 class="second-line">{{ trans('base.booking') }}</h2>
+            <div class="title"><h3>{{ trans('base.services') }}</h3></div>
 
         </div>
 
-        <form id="booking-form" action="/{{ App::getLocale() }}/booking" method="get">
-
-            <span class="for-arrival-date">{{ trans('base.arrival') }}</span>
-            <input type="text" id="from" name="from" class="arrival-date">
-
-            <span class="for-departure-date">{{ trans('base.departure') }}</span>
-            <input type="text" id="to" name="to" class="departure-date">
-
-            <input name="booking-btn" id="booking-btn" class="booking-btn" value="{{ trans('base.booking') }}" type="submit">
-
-        </form>
-
     </div>
+    <!--end: Row-->
 
+    <!-- start: Row -->
+    <div class="row">
 
-    <div class="content-main">
-
-
-    <span>{{ trans('base.hotelcontenttitle') }}</span>
-
-    <ul class="clearfix">
+        <!-- start: Icon Boxes -->
+        <div class="icons-box-vert-container">
 
             @foreach($services as $service)
 
-                <li>
-                    @if(count($service->getImages()) > 0)
-                    <div class="img-block" style="background: url('/{{ $service->getImages()[0]['min'] }}') no-repeat center; background-size: cover"></div>
-                    @else
-                    <div class="img-block"></div>
-                    @endif
-                    <div class="describe-block">
+            <div class="span6">
+                <div class="icons-box-vert">
+                    <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
+                        @if(count($service->getImages()) > 0)
+                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="/{{ $service->getImages()[0]['min'] }}" data-holder-rendered="true" >
+                       <!-- <div class="img-block" style="background: url('/{{ $service->getImages()[0]['min'] }}') no-repeat center; background-size: cover"></div>-->
+                        @else
+                        <div class="img-block"></div>
+                        @endif
+                    </a>
+                    <div class="icons-box-vert-info">
 
-                        <h1>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h1>
+                        <h3>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h3>
 
-                        <section>{{ str_limit($service -> getTranslate('description'),135,'...') }}</section>
+                        <p>{{ str_limit($service -> getTranslate('description'),135,'...') }}</p>
 
-                        <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">{{ trans('base.more') }}<div class="arrow-right"></div></a>
-
+                        <!-- <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">{{ trans('base.more') }}<div class="arrow-right"></div></a> -->
+                        <div class="clear"></div>
                     </div>
 
-                </li>
+                </div>
+                <div class="clear"></div>
+            </div>
 
             @endforeach
+            @foreach($services as $service)
+                <!-- start: Icon Box Start -->
+                <div class="span6">
+                    <div class="icons-box-vert">
+                        <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
+                            @if(count($service->getImages()) > 0)
+                                <img alt="" class="circle-color" style="width: 90px; height: 90px" src="/{{ $service->getImages()[0]['min'] }}" data-holder-rendered="true" >
+                            @endif
+                        </a>
+                        <div class="icons-box-vert-info">
+                            <h3>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h3>
+                            <p>{{ str_limit($service -> getTranslate('description'),135,'...') }}</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- end: Icon Box-->
+            @endforeach
+            <!-- start: Icon Box Start -->
+            <div class="span6">
+                <div class="icons-box-vert">
+                    <a href="#">
+                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out20.jpg" data-holder-rendered="true" >
+                    </a>
+                    <div class="icons-box-vert-info">
+                        <h3>Сауна</h3>
+                        <p>На території садиби є сауна з контрастним басейном та каміном.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!-- end: Icon Box -->
 
-    </ul>
+            <!-- start: Icon Box Start -->
+            <div class="span6">
+                <div class="icons-box-vert">
+                    <a href="#">
+                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out17.jpg" data-holder-rendered="true" >
+                    </a>
+                    <div class="icons-box-vert-info">
+                        <h3>Альтанка</h3>
+                        <p>Ще для відпочинку наших гостей доступні альтанка і мангал що розміщені на подвір'ї.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!-- end: Icon Box -->
 
-    <div class="hotel-describe">
+            <!-- start: Icon Box Start -->
+            <div class="span6">
+                <div class="icons-box-vert">
+                    <a href="#">
+                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://static2.karpaty.info/data/objects/img/606/out18_tn.jpg" data-holder-rendered="true" >
+                    </a>
+                    <div class="icons-box-vert-info">
+                        <h3>Паркінг</h3>
+                        <p>До послуг наших клієнтів доступне безкоштовне паркомісце на території садиби.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!-- end: Icon Box -->
 
-    <h1>{{ $hotel -> getTranslate('title') }}</h1>
-    <section>{!!  $hotel -> getTranslate('description') !!}</section>
-
+        </div>
+        <!-- end: Icon Boxes -->
+        <div class="clear"></div>
     </div>
+    <!-- end: Row -->
 
-    </div>
+
+</div>
 
 @endsection

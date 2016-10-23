@@ -329,7 +329,7 @@ class CategoriesSeeder extends Seeder {
             'id' => "1",
             'name' => 'Готель',
             'link' => 'hotel',
-            'fields' => '["title","description","gallery"]',
+            'fields' => '["title","description"]',
         ]);
 
         Category::create([

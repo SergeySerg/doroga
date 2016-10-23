@@ -1545,4 +1545,9 @@ form#newsletter input[type=submit] {
 	}
 	
 }
+/*Кастомні класи*/
+span.lang{
+	font-size: 16px;
+	text-transform: uppercase;
+}
 	
