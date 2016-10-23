@@ -1,7 +1,7 @@
 @extends('ws-app')
 
 @section('content')
-
+<div class="container">
     <div class="content">
 
         <div class="content-title">
@@ -31,5 +31,5 @@
         @endforeach
 
     </div>
-
+</div>
 @stop

@@ -1,7 +1,7 @@
 @extends('ws-app')
 
 @section('content')
-
+<div class="container">
     <div class="content content-contact">
 
         <div class="content-title">
@@ -69,5 +69,5 @@
         {!!$texts->get('header.map')!!}
 
     </div>
-
+</div>
 @stop

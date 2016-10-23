@@ -67,94 +67,26 @@
         <div class="icons-box-vert-container">
 
             @foreach($services as $service)
-
-            <div class="span6">
-                <div class="icons-box-vert">
-                    <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
-                        @if(count($service->getImages()) > 0)
-                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="/{{ $service->getImages()[0]['min'] }}" data-holder-rendered="true" >
-                       <!-- <div class="img-block" style="background: url('/{{ $service->getImages()[0]['min'] }}') no-repeat center; background-size: cover"></div>-->
-                        @else
-                        <div class="img-block"></div>
-                        @endif
-                    </a>
-                    <div class="icons-box-vert-info">
-
-                        <h3>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h3>
-
-                        <p>{{ str_limit($service -> getTranslate('description'),135,'...') }}</p>
-
-                        <!-- <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">{{ trans('base.more') }}<div class="arrow-right"></div></a> -->
-                        <div class="clear"></div>
-                    </div>
-
-                </div>
-                <div class="clear"></div>
-            </div>
-
-            @endforeach
-            @foreach($services as $service)
                 <!-- start: Icon Box Start -->
                 <div class="span6">
                     <div class="icons-box-vert">
                         <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
                             @if(count($service->getImages()) > 0)
                                 <img alt="" class="circle-color" style="width: 90px; height: 90px" src="/{{ $service->getImages()[0]['min'] }}" data-holder-rendered="true" >
+                            @else
+                            <div class="img-block"></div>
                             @endif
                         </a>
                         <div class="icons-box-vert-info">
                             <h3>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h3>
-                            <p>{{ str_limit($service -> getTranslate('description'),135,'...') }}</p>
+                            <p>{{ str_limit($service -> getTranslate('description'),95,'...') }}</p>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <!-- end: Icon Box-->
             @endforeach
-            <!-- start: Icon Box Start -->
-            <div class="span6">
-                <div class="icons-box-vert">
-                    <a href="#">
-                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out20.jpg" data-holder-rendered="true" >
-                    </a>
-                    <div class="icons-box-vert-info">
-                        <h3>Сауна</h3>
-                        <p>На території садиби є сауна з контрастним басейном та каміном.</p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <!-- end: Icon Box -->
 
-            <!-- start: Icon Box Start -->
-            <div class="span6">
-                <div class="icons-box-vert">
-                    <a href="#">
-                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://www.karpaty.info/data/objects/img/606/out17.jpg" data-holder-rendered="true" >
-                    </a>
-                    <div class="icons-box-vert-info">
-                        <h3>Альтанка</h3>
-                        <p>Ще для відпочинку наших гостей доступні альтанка і мангал що розміщені на подвір'ї.</p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <!-- end: Icon Box -->
-
-            <!-- start: Icon Box Start -->
-            <div class="span6">
-                <div class="icons-box-vert">
-                    <a href="#">
-                        <img alt="" class="circle-color" style="width: 90px; height: 90px" src="http://static2.karpaty.info/data/objects/img/606/out18_tn.jpg" data-holder-rendered="true" >
-                    </a>
-                    <div class="icons-box-vert-info">
-                        <h3>Паркінг</h3>
-                        <p>До послуг наших клієнтів доступне безкоштовне паркомісце на території садиби.</p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <!-- end: Icon Box -->
 
         </div>
         <!-- end: Icon Boxes -->
