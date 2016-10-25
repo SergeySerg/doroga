@@ -2,158 +2,155 @@
 
 @section('content')
 <div class="container">
-    <div class="content-rooms">
 
+    <!-- start: Row -->
+    <div class="row">
+        @foreach($rooms as $room)
+            <!-- start: ServicesItem -->
+            <div class="services-wrap">
+                <div class="span12">
+                    <div class="title"><h3>{{ $room -> getTranslate('title') }}</h3></div>
+                </div>
+                <div class="span3 center">
+                    <div class="circle-color main-img" style="background: url('/{{ $room->getImages()[0]['min'] }}') no-repeat center;"></div>
+                </div>
+                <div class="span6">
+                    <p> {!! $room -> getTranslate('description') !!}</p>
+                </div>
+                <div class="span3">
+                    <div class="testimonials">
+                        <h5 class="center">с 01.10.2016 по 31.10.2016</h5>
+                        <h3><span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></h3>
+                        <h5 class="center">с 01.10.2016 по 31.10.2016</h5>
+                        <h3><span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></h3>
+                        <div class="row-fluid" style="text-align: center">
+                            <button style="margin-top: 10px" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                {{ trans('base.booking') }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="span12">
+                    <!-- start: Carousel -->
+                    @if(count($room -> getImages()) > 0)
+                    <div id="webstudio-carousel-{{ $room -> id }}" class="webstudio-carousel" style="display:none;">
+                        @foreach($room -> getImages() as $imgSrc)
+                            <img alt="" src="/{{ $imgSrc['min'] }}"
+                                 data-image="/{{ $imgSrc['full'] }}">
+                        @endforeach
+                    </div>
+                    @else
+                    <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/frontend/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
+                    @endif
+                    <!-- end: Carousel -->
+                </div>
+            </div>
+            <!-- end: ServicesItem -->
+        @endforeach
+    </div>
+    <!-- end: Row -->
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center">{{ trans('base.modal.booking') }}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <select class="selectpicker span12" >
+                            <option>{{ trans('base.modal.chooseroom') }}</option>
+                            <option>Номер 1</option>
+                            <option>Номер 2</option>
+                            <option>Номер 3</option>
+                            <option>Номер 4</option>
+                            <option>Весь котедж</option>
+                        </select>
+                    </div>
+                </div>
 
-        <div class="row">
-
-            <div class="span12">
-
-                <div class="title"><h1>{{ trans('base.roomscontenttitle') }}</h1></div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label>{{ trans('base.modal.сhildren') }}</label>
+                        <select class="selectpicker span8">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="span3">
+                        <label>{{ trans('base.modal.adults') }}</label>
+                        <select class="selectpicker span8">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="span3">
+                        <div class="row-fluid">
+                            <label for="id-date-picker-1">{{ trans('base.modal.сheckin') }}</label>
+                        </div>
+                        <div class="control-group">
+                            <div class="row-fluid input-append">
+                                <input class="span9 date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
+                                    <span class="add-on" >
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                            </div>
+                        </div>
+                     </div>
+                    <div class="span3">
+                        <div class="row-fluid">
+                            <label for="id-date-picker-2">{{ trans('base.modal.сheckout') }}</label>
+                        </div>
+                        <div class="control-group">
+                            <div class="row-fluid input-append">
+                                <input class="span9 date-picker" id="id-date-picker-2" type="text" data-date-format="dd-mm-yyyy" />
+                                    <span class="add-on">
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="control-group">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control span12" placeholder="{{ trans('base.modal.name') }}" aria-describedby="sizing-addon3">
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control span12" placeholder="E-mail" aria-describedby="sizing-addon3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="control-group">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control span12" placeholder="{{ trans('base.modal.telnumber') }}" aria-describedby="sizing-addon3">
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control span12" placeholder="{{ trans('base.modal.comment') }}" aria-describedby="sizing-addon3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
+            <div class="modal-footer" style="text-align: center">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                <button type="button" class="btn btn-primary">{{ trans('base.modal.bookingbutton') }}</button>
+            </div>
         </div>
-
-        @foreach($rooms as $room)
-        <div class="span12">
-                <div id="room-{{ $room -> id }}" class="rooms-block clearfix">
-
-                    <div class="clearfix">
-
-                        @if(count($room -> getImages()) > 0)
-
-                            <div class="img-block">
-
-                                <div id="webstudio-gallery-id-{{ $room -> id }}" class="webstudio-gallery-rooms" style="display:none;">
-
-                                    @foreach($room -> getImages() as $imgSrc)
-
-                                        <img alt="" src="/{{ $imgSrc['min'] }}"
-                                             data-image="/{{ $imgSrc['full'] }}">
-
-                                    @endforeach
-
-                                </div>
-
-                            </div>
-
-                        @else
-
-                            <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
-
-                        @endif
-
-                        <div class="describe-block">
-
-                            <h1>{{ $room -> getTranslate('title') }}</h1>
-
-                            <span>{{ trans('base.quantity') }}:<span class="qnty">{{ $room -> quantity }}</span></span>
-
-                            <div class="describe-room">
-
-                                {!! $room -> getTranslate('description') !!}
-
-                            </div>
-
-                        </div>
-
-                        <div class="price-block">
-
-                            <span>{{ trans('base.cost') }}:<span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></span>
-
-                            <h4 class="pink">
-                                <i class="icon-hand-right green"></i>
-                                <a href="#modal-form" role="button" class="blue" data-toggle="modal"> Form Inside a Modal Box </a>
-                            </h4>
-                            <div id="modal-form" class="modal hide" tabindex="-1">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="blue bigger">Please fill the following form fields</h4>
-                                </div>
-
-                                <div class="modal-body overflow-visible">
-                                    <div class="row-fluid">
-                                        <div class="span5">
-                                            <div class="space"></div>
-
-                                            <input type="file" />
-                                        </div>
-
-                                        <div class="vspace"></div>
-
-                                        <div class="span7">
-                                            <div class="control-group">
-                                                <label for="form-field-select-3">Location</label>
-
-                                                <div class="controls">
-                                                    <select class="chzn-select" data-placeholder="Choose a Country...">
-                                                        <option value="" />
-                                                        <option value="AL" />Alabama
-                                                        <option value="AK" />Alaska
-                                                        <option value="AZ" />Arizona
-
-
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="control-group">
-                                                <label class="control-label" for="form-field-username">Username</label>
-
-                                                <div class="controls">
-                                                    <input type="text" id="form-field-username" placeholder="Username" value="alexdoe" />
-                                                </div>
-                                            </div>
-
-                                            <div class="control-group">
-                                                <label class="control-label" for="form-field-first">Name</label>
-
-                                                <div class="controls">
-                                                    <input class="input-small" type="text" id="form-field-first" placeholder="First Name" value="Alex" />
-                                                    <input class="input-small" type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button class="btn btn-small" data-dismiss="modal">
-                                        <i class="icon-remove"></i>
-                                        Cancel
-                                    </button>
-
-                                    <button class="btn btn-small btn-primary">
-                                        <i class="icon-ok"></i>
-                                        Save
-                                    </button>
-                                </div>
-                            </div>
-
-                           {{-- <a class="booking-btn-in-rooms" href="/{{ App::getLocale() }}/booking">{{ trans('base.booking') }}</a> --}}
-
-                        </div>
-
-                    </div>
-
-                    <div class="r-tab conveniences-line">
-
-                        <span>{{ trans('base.conveniences') }}</span>
-
-                        <div class="arrow-conveniences"></div>
-
-                    </div>
-
-                    <div class="conveniences-block clearfix"></div>
-
-                </div>
-        </div>
-        @endforeach
-
     </div>
 </div>
-
-
-
+<!-- /Modal -->
 @stop

@@ -41,10 +41,23 @@ return [
     'currency' => 'грн',
     'cost' => 'Вартість',
     'conveniences' => 'Зручності',
+	/* Modal*/
+	'modal.booking' => 'Бронювання онлайн',
+	'modal.chooseroom' => 'Выберіть категорію номера',
+	'modal.сhildren' => 'Дітей',
+	'modal.adults' => 'Дорослих',
+	'modal.сheckin' => 'Дата заїзду',
+	'modal.сheckout' => 'Дата виїзду',
+	'modal.name' => 'Прізвище та Ім\'я',
+	'modal.telnumber' => 'Номер телефону',
+	'modal.comment' => 'Коментар',
+	'modal.bookingbutton' => 'Забронювати',
+	/* End Modal */
     /* End Rooms Page */
 	/* Services Page */
 	'servicescontenttitle' => 'Послуги',
 	'visit' => 'Відвідування',
+	'free' => 'Безкоштовно',
 	/* End Services Page */
 	/* Events Page */
 	'eventscontenttitle' => 'Події',
@@ -60,6 +73,12 @@ return [
 	'email' => 'Ваш e-mail',
 	'message' => 'Текст повідомлення',
 	'send' => 'Відправити',
+	'addr' => 'Адреса',
+	'tel' => 'Телефони',
+	'soc' => 'Слідкуйте за нами',
+
+
 	/* End Footer */
+
 
 ];

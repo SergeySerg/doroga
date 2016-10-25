@@ -79,7 +79,7 @@
                         </a>
                         <div class="icons-box-vert-info">
                             <h3>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h3>
-                            <p>{{ str_limit($service -> getTranslate('description'),95,'...') }}</p>
+                            <p>{!! str_limit($service -> getTranslate('description'),95,'...') !!}</p>
                         </div>
                         <div class="clear"></div>
                     </div>

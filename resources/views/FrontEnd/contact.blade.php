@@ -1,7 +1,17 @@
 @extends('ws-app')
 
 @section('content')
-<div class="container">
+<div class="map">
+    <div class="container">
+        <div class="data">{{ $texts->get('header.mail') }}</div>
+        {{ $texts->get('header.skype') }}
+        <div class="data location">{{ $texts->get('header.coordinates') }} </div>
+    <!-- starts: Google Maps -->
+    {!! $texts->get('header.map') !!}
+    <!-- end: Google Maps -->
+    </div>
+</div>
+<!--<div class="container">
     <div class="content content-contact">
 
         <div class="content-title">
@@ -69,5 +79,5 @@
         {!!$texts->get('header.map')!!}
 
     </div>
-</div>
+</div>-->
 @stop

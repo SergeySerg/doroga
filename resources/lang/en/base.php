@@ -40,10 +40,23 @@ return [
 	'currency' => 'uah',
     'cost' => 'Cost',
     'conveniences' => 'Amenities',
+	/* Modal*/
+	'modal.booking' => 'Booking online',
+	'modal.chooseroom' => 'Select a category number',
+	'modal.сhildren' => 'Children',
+	'modal.adults' => 'Adults',
+	'modal.сheckin' => 'Сheck-in',
+	'modal.сheckout' => 'Сheck-out',
+	'modal.name' => 'Name and surname',
+	'modal.telnumber' => 'Phone number',
+	'modal.comment' => 'Comment',
+	'modal.bookingbutton' => 'Booking',
+	/* End Modal */
 /* End Rooms Page */
 /* Services Page */
 	'servicescontenttitle' => 'Services',
 	'visit' => 'Visit',
+	'free' => 'Free',
 /* End Services Page */
 /* Events Page */
 	'eventscontenttitle' => 'Events',
@@ -59,6 +72,9 @@ return [
 	'message' => 'Your message',
 	'send' => 'Send',
 	'booking' => 'Booking',
+	'addr' => 'Address',
+	'tel' => 'Phones',
+	'soc' => 'Follow us',
 /* End Footer */
 
 

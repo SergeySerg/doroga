@@ -2,6 +2,54 @@
 
 @section('content')
 <div class="container">
+
+    <!-- start: Row -->
+    <div class="row">
+        @foreach($services as $service)
+        <!-- start: ServicesItem -->
+        <div class="services-wrap">
+            <div class="span12">
+                <div class="title"><h3>{{ $service -> getTranslate('title') }}</h3></div>
+            </div>
+            <div class="span3 center">
+                <div class="circle-color main-img" style="background: url('/{{ $service->getImages()[0]['min'] }}') no-repeat center;"></div>
+            </div>
+            <div class="span6">
+                <p> {!! $service -> getTranslate('description') !!}</p>
+            </div>
+            <div class="span3">
+                <div class="testimonials">
+                    <h3>
+                        <span class="price">
+                            @if (($service->price) > 0 )
+                               {{ $service -> price }} {{ trans('base.currency') }}
+                            @else
+                                 {{ trans('base.free') }}
+                            @endif
+                        </span>
+                    </h3>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12">
+                <!-- start: Carousel -->
+                @if(count($service -> getImages()) > 0)
+                <div id="webstudio-carousel-{{ $service -> id }}" class="webstudio-carousel" style="display:none;">
+                    @foreach($service -> getImages() as $imgSrc)
+                    <img alt="" src="/{{ $imgSrc['min'] }}"
+                         data-image="/{{ $imgSrc['full'] }}">
+                    @endforeach
+                </div>
+                @endif
+                <!-- end: Carousel -->
+            </div>
+        </div>
+        <!-- end: ServicesItem -->
+        @endforeach
+    </div>
+    <!-- end: Row -->
+</div>
+<!--<div class="container">
     <div class="content">
 
         <div class="content-title">
@@ -77,5 +125,5 @@
         @endforeach
 
     </div>
-</div>
+</div>-->
 @stop

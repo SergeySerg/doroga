@@ -25,6 +25,7 @@ return [
 	'departure' => 'Date of departure',
 	'fast' => 'Fast',
 	'more' => 'More',
+	'booking' => 'Забронировать',
 /* End Booking */
 /* Hotel Page */
 	'hotelcontenttitle' => 'У нас ви найдете',
@@ -36,10 +37,23 @@ return [
 	'currency' => 'грн',
     'cost' => 'Стоимость',
     'conveniences' => 'Удобства',
+	/* Modal*/
+	'modal.booking' => 'Бронирование онлайн',
+	'modal.chooseroom' => 'Выберите категорию номера',
+	'modal.сhildren' => 'Детей',
+	'modal.adults' => 'Взрослых',
+	'modal.сheckin' => 'Дата заезда',
+	'modal.сheckout' => 'Дата виезда',
+	'modal.name' => 'Фамилия и Имя',
+	'modal.telnumber' => 'Номер телефона',
+	'modal.comment' => 'Комментарий',
+	'modal.bookingbutton' => 'Забронировать',
+	/* End Modal */
 /* End Rooms Page */
 /* Services Page */
 	'servicescontenttitle' => 'Услуги',
 	'visit' => 'Visit',
+	'free' => 'Бесплатно',
 /* End Services Page */
 /* Events Page */
 	'eventscontenttitle' => 'Events',
@@ -54,7 +68,9 @@ return [
 	'email' => 'Ваш e-mail',
 	'message' => 'Текст сообщения',
 	'send' => 'Отправить',
-	'booking' => 'Booking',
+	'addr' => 'Адрес',
+	'tel' => 'Телефоны',
+	'soc' => 'Следите за нами',
 /* End Footer */
 
 
