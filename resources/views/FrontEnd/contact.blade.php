@@ -2,14 +2,17 @@
 
 @section('content')
 <div class="map">
-    <div class="container">
-        <div class="data">{{ $texts->get('header.mail') }}</div>
-        {{ $texts->get('header.skype') }}
-        <div class="data location">{{ $texts->get('header.coordinates') }} </div>
+
     <!-- starts: Google Maps -->
-    {!! $texts->get('header.map') !!}
+
+    <div id="googlemaps-container-top"></div>
+    <div id="googlemaps" class="google-map google-map-full"></div>
+    <div id="googlemaps-container-bottom"></div>
+
+
+
     <!-- end: Google Maps -->
-    </div>
+
 </div>
 <!--<div class="container">
     <div class="content content-contact">

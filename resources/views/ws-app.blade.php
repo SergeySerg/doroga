@@ -243,6 +243,12 @@
 <script src="{{ asset('/js/frontend/ug-theme-compact.js') }}"></script>
 <script src="{{ asset('/js/frontend/ug-theme-carousel.js') }}"></script>
 <script src="{{ asset('/js/frontend/ug-theme-tiles.js') }}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyARimfCVH19VyYWgXVxeIBJ9LUGdels4E4"></script>
+
+<script src="{{ asset('/js/frontend/jquery.gmap.min.js') }}"></script>
+
+
 <!-- end: For slider -->
 <script type="text/javascript">
 
@@ -332,6 +338,22 @@
 	});
 	/* END raund script-------------------------------------------------------*/
 
+</script>
+<script type="text/javascript">
+	$('#googlemaps').gMap({
+		maptype: 'ROADMAP',
+		scrollwheel: true,
+		zoom: 16,
+		markers: [
+			{
+				address: "48.40504  24.59992",
+				html: '',
+				popup: false,
+			}
+
+		],
+
+	});
 </script>
 
 
