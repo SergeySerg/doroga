@@ -64,11 +64,9 @@
                     <div class="span12">
                         <select class="selectpicker span12" >
                             <option>{{ trans('base.modal.chooseroom') }}</option>
-                            <option>Номер 1</option>
-                            <option>Номер 2</option>
-                            <option>Номер 3</option>
-                            <option>Номер 4</option>
-                            <option>Весь котедж</option>
+                            @foreach($rooms as $room)
+                            <option>{{ $room -> getTranslate('title') }}</option>
+                           @endforeach
                         </select>
                     </div>
                 </div>
@@ -77,7 +75,7 @@
                     <div class="span3">
                         <label>{{ trans('base.modal.сhildren') }}</label>
                         <select class="selectpicker span8">
-                            <option>0</option>
+                            <option>-</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
