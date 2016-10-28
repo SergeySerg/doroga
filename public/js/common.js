@@ -97,5 +97,9 @@ jQuery(document).ready(function($){
 	});
 	/* END raund script-------------------------------------------------------*/
 
+	$('.date-picker').datepicker().next().on('click', function(){
+		$(this).prev().focus();
+	});
+
 
 });
