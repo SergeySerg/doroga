@@ -1,7 +1,27 @@
 @extends('ws-app')
 
 @section('content')
-<!-- start: Container -->
+
+    <!-- start: Page Title -->
+    <div id="page-title">
+
+        <div id="page-title-inner">
+
+            <!-- start: Container -->
+            <div class="container">
+
+                <h2>{{ trans('base.gallery') }}</h2>
+
+            </div>
+            <!-- end: Container  -->
+
+        </div>
+
+    </div>
+    <!-- end: Page Title -->
+
+
+    <!-- start: Container -->
 <div class="container">
     @foreach($gallery as $gall)
         <div class="row">
