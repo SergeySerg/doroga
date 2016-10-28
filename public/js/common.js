@@ -1,20 +1,4 @@
 jQuery(document).ready(function($){
-	
-	/* ------------------- Client Carousel --------------------- */
-
-	/*$('.clients-carousel').flexslider({
-	    animation: "slide",
-		easing: "swing",
-	    animationLoop: true,
-	    itemWidth: 188,
-	    itemMargin: 0,
-	    minItems: 1,
-	    maxItems: 5,
-		controlNav: false,
-		directionNav: false,
-		move: 1
-      });*/
-
 
 	/* ------------------ Back To Top ------------------- */
 
@@ -65,18 +49,53 @@ jQuery(document).ready(function($){
 			});
 
 		})();
-		
-			
-});
 
-
-/* ------------------- Parallax --------------------- */
-/*
-jQuery(document).ready(function($){
-	
-	$('#da-slider').cslider({
-		autoplay	: true,
-		bgincrement	: 450
+	$('.webstudio-carousel').each(function(){
+		$(this).unitegallery({
+			gallery_theme: "carousel",
+			tile_width: 75,						//tile width
+			tile_height: 75,						//tile height
+			tile_enable_border:true,			//enable border of the tile
+			tile_border_width:3,				//tile border width
+			tile_border_color:"#f6f6f6",		//tile border color
+			tile_border_radius:0,
+			tile_enable_outline: false,
+			theme_enable_navigation: false,
+		});
 	});
 
-});*/
+	$('.webstudio-gallery').each(function(){
+		$(this).unitegallery({
+			gallery_theme: "tiles",
+			tiles_type: "justified"
+		});
+	});
+
+	$("#webstudio-slider").unitegallery({
+		gallery_theme: "slider",
+		tiles_justified_space_between:0,
+		gallery_width:'100%',							//gallery width
+		gallery_height:300,								//gallery height
+		gallery_max_height: 300,
+		slider_control_zoom: false,
+		slider_enable_text_panel: true,			 		//true,false - enable the text panel
+		slider_textpanel_always_on: true,				//true,false - text panel are always on, false - show only on mouseover
+		slider_textpanel_text_valign: "middle",			//middle, top, bottom - text vertical align
+		slider_textpanel_padding_top:10,				//textpanel padding top
+		slider_textpanel_padding_bottom:20,				//textpanel padding bottom
+		slider_textpanel_height: null,					//textpanel height. if null it will be set dynamically
+		slider_textpanel_padding_title_description: 5,	//the space between the title and the description
+		slider_textpanel_padding_right: 11,				//cut some space for text from right
+		slider_textpanel_padding_left: 11,				//cut some space for text from left
+		slider_textpanel_fade_duration: 200,			//the fade duration of textpanel appear
+		slider_textpanel_enable_title: true,			//enable the title text
+		slider_textpanel_enable_description: true,		//enable the description text
+		slider_textpanel_enable_bg: true,				//enable the textpanel background
+		slider_textpanel_bg_color:"#000000",			//textpanel background color
+		slider_textpanel_bg_opacity: 0.4,
+		slider_enable_bullets: false,
+	});
+	/* END raund script-------------------------------------------------------*/
+
+
+});

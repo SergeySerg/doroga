@@ -1,83 +1,53 @@
 @extends('ws-app')
 
 @section('content')
-<div class="map">
-    <div class="container">
-        <div class="data">{{ $texts->get('header.mail') }}</div>
-        {{ $texts->get('header.skype') }}
-        <div class="data location">{{ $texts->get('header.coordinates') }} </div>
-    <!-- starts: Google Maps -->
-    {!! $texts->get('header.map') !!}
-    <!-- end: Google Maps -->
-    </div>
-</div>
-<!--<div class="container">
-    <div class="content content-contact">
 
-        <div class="content-title">
+    {{-- start: Page Title --}}
+    <div id="page-title">
 
-            <span class="category-name gallery-name">{{ trans('base.contacts') }}</span>
+        <div id="page-title-inner">
 
-            <div class="content-title-line"><div class="flower-right"></div></div>
+            {{-- start: Container --}}
+            <div class="container">
 
-        </div>
-
-        <div class="contact-block clearfix">
-
-            <div class="contact-item clearfix">
-
-                <ul>
-
-                    <li class="clearfix">
-
-                        <div class="map-label-contact"></div>
-                        <div class="data"> {{ $texts->get('header.address') }} </div>
-
-
-                    </li>
-
-                    <li class="clearfix">
-
-                        <div class="phone-contact"></div>
-                        <div class="data"> {!!$texts->get('header.tel')!!}  </div>
-
-                    </li>
-
-                </ul>
+                <h2>{{ trans('base.contacts') }}</h2>
 
             </div>
-
-            <div class="contact-item clearfix">
-
-                <ul>
-
-                    <li class="clearfix">
-
-                        <div class="letter-contact"></div>
-                        <div class="data">{{ $texts->get('header.mail') }}</div>
-
-                    </li>
-
-                    <li class="clearfix">
-
-                        <div class="location-contact"></div>
-                        <div class="data location">{{ $texts->get('header.coordinates') }} </div>
-
-                    </li>
-
-                </ul>
-
-
-            </div>
+            {{-- end: Container  --}}
 
         </div>
 
     </div>
+    {{-- end: Page Title --}}
 
-    <div class="map-contact">
+    {{-- start: Map --}}
+    <div class="map">
 
-        {!!$texts->get('header.map')!!}
+        {{-- starts: Google Maps --}}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <div id="googlemaps-container-top"></div>
+        <div id="googlemaps" class="google-map google-map-full"></div>
+        <div id="googlemaps-container-bottom"></div>
+        <script src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyARimfCVH19VyYWgXVxeIBJ9LUGdels4E4"></script>
+        <script src="{{ asset('/js/frontend/jquery.gmap.min.js') }}"></script>
+
+        <script type="text/javascript">
+            $('#googlemaps').gMap({
+                maptype: 'ROADMAP',
+                scrollwheel: true,
+                zoom: 16,
+                markers: [
+                    {
+                        address: '{{ $texts->get('header.coordinates') }}',
+                        html: '',
+                        popup: false,
+                    }
+                ],
+            });
+        </script>
+        {{-- end: Google Maps --}}
 
     </div>
-</div>-->
+    {{-- end: Map --}}
+
 @stop

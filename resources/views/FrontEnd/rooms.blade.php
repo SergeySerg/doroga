@@ -1,7 +1,27 @@
 @extends('ws-app')
 
 @section('content')
-<div class="container">
+
+    <!-- start: Page Title -->
+    <div id="page-title">
+
+        <div id="page-title-inner">
+
+            <!-- start: Container -->
+            <div class="container">
+
+                <h2>{{ trans('base.rooms') }}</h2>
+
+            </div>
+            <!-- end: Container  -->
+
+        </div>
+
+    </div>
+    <!-- end: Page Title -->
+
+
+    <div class="container">
 
     <!-- start: Row -->
     <div class="row">

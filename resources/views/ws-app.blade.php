@@ -2,7 +2,7 @@
 <html lang="{{ App::getLocale() }}" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
-	<title>Premium Club</title>
+	<title>Дорога додому</title>
 	<meta name="title" content="{{ $meta ->getTranslate('meta_title') }}">
 	<meta name="description" content="{{ $meta ->getTranslate('meta_description') }}">
 	<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
@@ -91,24 +91,6 @@
 
 </header>
 <!--end: Header-->
-
-<!-- start: Page Title -->
-<div id="page-title">
-
-	<div id="page-title-inner">
-
-		<!-- start: Container -->
-		<div class="container">
-
-			<h2><i class="ico-stats ico-white" style="display: none"></i>Дорога додому</h2>
-
-		</div>
-		<!-- end: Container  -->
-
-	</div>
-
-</div>
-<!-- end: Page Title -->
 
 <!--start: Wrapper-->
 <div id="wrapper" >
