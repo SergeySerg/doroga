@@ -17,15 +17,22 @@ Route::post('/contact', function(){
 			'email' => Input::get('email')
 		);
 		$data = array(
+			'room' =>  Input::get('room'),
+			'quantityсhildren' =>  Input::get('quantityсhildren'),
+			'quantityadult' =>  Input::get('quantityadult'),
 			'name' => Input::get('name'),
 			'email' => Input::get('email'),
+			'data_from' => Input::get('data_from'),
+			'data_to' => Input::get('data_to'),
+			"tel" => Input::get('tel'),
 			'message_body' => Input::get('message')
 		);
 		/*dd($data);*/
 		$rules = array(
+			'room' => 'required',
 			'name'  => 'required|max:50',
 			'email' => 'required|email',
-			'message_body' => 'required|min:6',
+			//'message_body' => 'required|min:6',
 		);
 		$validation = Validator::make($data, $rules);
 
@@ -39,7 +46,7 @@ Route::post('/contact', function(){
 
 
 		Mail::send('emails.letter', $data, function($message) use ($user) {
-			$message->to('webtestingstudio@gmail.com', 'Premium Club')->subject('Повідомлення з сайту Premium Club ');
+			$message->to('webtestingstudio@gmail.com', 'Дорога додому')->subject('Повідомлення з сайту "Дорога додому" ');
 		});
 		return response()->json([
 			"status" => 'success'

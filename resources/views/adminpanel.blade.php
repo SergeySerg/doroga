@@ -87,6 +87,11 @@
             </a><!--/.brand-->
 
             <ul class="nav ace-nav pull-right">
+                <li class="purple">
+                    <a  class="dropdown-toggle" target="_blank" href="{{ asset('/') }}">
+                        <span class="badge badge-important">Перейти на сайт</span>
+                    </a>
+                </li>
 
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">

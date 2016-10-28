@@ -20,9 +20,7 @@
                 <div class="span3">
                     <div class="testimonials">
                         <h5 class="center">с 01.10.2016 по 31.10.2016</h5>
-                        <h3><span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></h3>
-                        <h5 class="center">с 01.10.2016 по 31.10.2016</h5>
-                        <h3><span class="price">{{ $room -> price }} {{ trans('base.currency') }}</span></h3>
+                        <h3><span class="price">{{ $room -> getTranslate('price') }}</span></h3>
                         <div class="row-fluid" style="text-align: center">
                             <button style="margin-top: 10px" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                                 {{ trans('base.booking') }}
@@ -54,100 +52,103 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-align: center">{{ trans('base.modal.booking') }}</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <select class="selectpicker span12" >
-                            <option>{{ trans('base.modal.chooseroom') }}</option>
-                            @foreach($rooms as $room)
-                            <option>{{ $room -> getTranslate('title') }}</option>
-                           @endforeach
-                        </select>
-                    </div>
+        <form id="bookingform" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" style="text-align: center">{{ trans('base.modal.booking') }}</h4>
                 </div>
+                <div class="modal-body">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <select id="select_room" class="selectpicker span12">
+                                <option >{{ trans('base.modal.chooseroom') }}</option>
+                                @foreach($rooms as $room)
+                                <option value = "{{ $room -> getTranslate('title') }}">{{ $room -> getTranslate('title') }}</option>
+                               @endforeach
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label>{{ trans('base.modal.сhildren') }}</label>
-                        <select class="selectpicker span8">
-                            <option>-</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-                    <div class="span3">
-                        <label>{{ trans('base.modal.adults') }}</label>
-                        <select class="selectpicker span8">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="span3">
-                        <div class="row-fluid">
-                            <label for="id-date-picker-1">{{ trans('base.modal.сheckin') }}</label>
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <label>{{ trans('base.modal.сhildren') }}</label>
+                            <select  id="select_сhildren" class="selectpicker span8">
+                                <option value = '-' >-</option>
+                                <option value = '1'>1</option>
+                                <option value = '2'>2</option>
+                                <option value = '3'>3</option>
+                                <option value = '4'>4</option>
+                            </select>
                         </div>
-                        <div class="control-group">
-                            <div class="row-fluid input-append">
-                                <input class="span9 date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
-                                    <span class="add-on" >
-                                        <i class="icon-calendar"></i>
-                                    </span>
+                        <div class="span3">
+                            <label>{{ trans('base.modal.adults') }}</label>
+                            <select  id="select_adults" class="selectpicker span8">
+                                <option value = '1'>1</option>
+                                <option value = '2'>2</option>
+                                <option value = '3'>3</option>
+                                <option value = '4'>4</option>
+                                <option value = '5'>5</option>
+                            </select>
+                        </div>
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <label for="from">{{ trans('base.modal.сheckin') }}</label>
                             </div>
-                        </div>
-                     </div>
-                    <div class="span3">
-                        <div class="row-fluid">
-                            <label for="id-date-picker-2">{{ trans('base.modal.сheckout') }}</label>
-                        </div>
-                        <div class="control-group">
-                            <div class="row-fluid input-append">
-                                <input class="span9 date-picker" id="id-date-picker-2" type="text" data-date-format="dd-mm-yyyy" />
-                                    <span class="add-on">
-                                        <i class="icon-calendar"></i>
-                                    </span>
+                            <div class="control-group">
+                                <div class="row-fluid input-append">
+                                    <input class="span9 date-picker" id="from" name="from" type="text" data-date-format="dd-mm-yyyy" />
+                                        <span class="add-on" >
+                                            <i class="icon-calendar"></i>
+                                        </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span6">
-                        <div class="control-group">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control span12" placeholder="{{ trans('base.modal.name') }}" aria-describedby="sizing-addon3">
+                         </div>
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <label for="to">{{ trans('base.modal.сheckout') }}</label>
                             </div>
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control span12" placeholder="E-mail" aria-describedby="sizing-addon3">
+                            <div class="control-group">
+                                <div class="row-fluid input-append">
+                                    <input class="span9 date-picker" id="to" name="to" type="text" data-date-format="dd-mm-yyyy" />
+                                        <span class="add-on">
+                                            <i class="icon-calendar"></i>
+                                        </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="span6">
-                        <div class="control-group">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control span12" placeholder="{{ trans('base.modal.telnumber') }}" aria-describedby="sizing-addon3">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <div class="control-group">
+                                <div class="input-group input-group-sm">
+                                    <input required type="text" name="name"  class="form-control span12" placeholder="{{ trans('base.modal.name') }}" aria-describedby="sizing-addon3">
+                                </div>
+                                <div class="input-group input-group-sm">
+                                    <input type="email" required name="email" id="email" class="form-control span12" placeholder="E-mail" aria-describedby="sizing-addon3">
+                                </div>
                             </div>
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control span12" placeholder="{{ trans('base.modal.comment') }}" aria-describedby="sizing-addon3">
+                        </div>
+                        <div class="span6">
+                            <div class="control-group">
+                                <div class="input-group input-group-sm">
+                                    <input type="number" required  name="tel"  id="tel" class="form-control span12" placeholder="{{ trans('base.modal.telnumber') }}" aria-describedby="sizing-addon3">
+                                </div>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="comment" id="comment" class="form-control span12" placeholder="{{ trans('base.modal.comment') }}" aria-describedby="sizing-addon3">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
+                <div class="modal-footer" style="text-align: center">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <input name="submit" class="btn btn-primary" id="submit" tabindex="5" value="{{ trans('base.modal.bookingbutton') }}" type="submit">
+                </div>
+                <div id="token" style="display: none">{{csrf_token()}}</div>
             </div>
-            <div class="modal-footer" style="text-align: center">
-                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                <button type="button" class="btn btn-primary">{{ trans('base.modal.bookingbutton') }}</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 <!-- /Modal -->

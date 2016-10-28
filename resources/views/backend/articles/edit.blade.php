@@ -43,15 +43,6 @@
             <!--PAGE CONTENT BEGINS-->
 
             <form class="form-horizontal" id="resource-form" method="POST" action="" />
-                @if($admin_category->hasField('price'))
-                    <div class="control-group">
-                        <label class="control-label" for="form-field-1">Ціна</label>
-
-                        <div class="controls">
-                            <input type="text" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->price}}'@endif  />
-                        </div>
-                    </div>
-                @endif
                 @if($admin_category->hasField('quantity'))
                     <div class="control-group">
                         <label class="control-label" for="form-field-2">Кількість</label>
@@ -115,12 +106,21 @@
                             <div class="tab-content">
                                 @foreach($langs as $lang)
                                     <div id="{{$lang->lang}}" @if(($lang->lang) == 'ua') class="tab-pane in active" @else class="tab-pane" @endif>
+                                    @if($admin_category->hasField('price'))
+                                    <div class="control-group">
+                                        <label class="control-label" for="form-field-1">Ціна</label>
+
+                                        <div class="controls">
+                                            <input type="text" id="form-field-1" name="price_{{$lang->lang}}" @if(isset($admin_article)) value='{{$admin_article->getTranslate('price',$lang->lang) }}'@endif  />
+                                        </div>
+                                    </div>
+                                    @endif
                                     @if($admin_category->hasField('title'))
                                         <div class="control-group">
                                             <label class="control-label" for="form-field-3">Назва</label>
 
                                             <div class="controls">
-                                                <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_article)){{ $admin_article->getTranslate('title', $lang->lang) }}@endif' id="form-field-3" placeholder="Назва номеру,події,послуги" />
+                                                <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_article)){{ $admin_article->getTranslate('title', $lang->lang) }}@endif' id="form-field-3" placeholder="Назва номеру,події,послуги,cлайду" />
                                             </div>
                                         </div>
                                     @endif

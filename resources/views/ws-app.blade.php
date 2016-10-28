@@ -227,7 +227,8 @@
 <!-- end: Container -->
 
 <!-- start: Java Script -->
-<script src="{{ asset('/js/frontend/jquery-1.8.2.js') }}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript" ></script>
+<!--<script src="{{ asset('/js/frontend/jquery-1.8.2.js') }}"></script>-->
 <script src="{{ asset('/js/frontend/bootstrap.js') }}"></script>
 <script src="{{ asset('/js/common.js') }}?ver={{ $version }}"></script>
 
@@ -243,10 +244,10 @@
 <script src="{{ asset('/js/frontend/ug-theme-compact.js') }}"></script>
 <script src="{{ asset('/js/frontend/ug-theme-carousel.js') }}"></script>
 <script src="{{ asset('/js/frontend/ug-theme-tiles.js') }}"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyARimfCVH19VyYWgXVxeIBJ9LUGdels4E4"></script>
 
 <script src="{{ asset('/js/frontend/jquery.gmap.min.js') }}"></script>
+<script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
 
 
 <!-- end: For slider -->
@@ -284,7 +285,7 @@
 <script type="text/javascript">
 	$(function() {
 
-		$('.date-picker').datepicker().next().on(ace.click_event, function(){
+		$('.date-picker').datepicker().next().on('click', function(){
 			$(this).prev().focus();
 		});
 
@@ -355,7 +356,63 @@
 
 	});
 </script>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
+		$("#bookingform").submit(function(e){
+			e.preventDefault();
+            $("#submit").attr('disabled', true);
+			var name = $("input[name=name]").val();
+			var email = $("input[name=email]").val();
+			var message = $("input[name=comment]").val();
+			var tel = $("input[name=tel]").val();
+			var token = $("#token").text();
+			var data_from = $("#from").val();
+			var data_to = $("#to").val();
+			var room = $("#select_room  :selected").val();
+			var quantityadult = $("#select_adults  :selected").val();
+			var quantityсhildren = $("#select_сhildren  :selected").val();
+			//var dataString = 'name='+name+'&email='+email+'&message'+message+'&_token='+token;
 
+			var data = {
+				name: name,
+				email: email,
+				message: message,
+				tel: tel,
+				'_token': token,
+				room: room,
+				data_from: data_from,
+				data_to: data_to,
+				quantityadult: quantityadult,
+				quantityсhildren: quantityсhildren
+
+			}
+			$.ajax({
+				method: "post",
+				url : "/contact",
+				data : data,
+				dataType : "json",
+
+				success: function(data){
+					console.info('Server response: ', data);
+					if(data.status == 'success'){
+						$('.close').trigger('click');
+						swal("Ваше повідомлення успішно відправлено!"," ","success");
+
+					}else{
+						swal("Будь ласка введіть всі дані!");
+						$("#submit").attr('disabled', false);
+					}
+				},
+				error:function(data){
+
+					swal("Сталася помилка при відправці повідомлення!");
+					$("#submit").attr('disabled', false);
+				}
+			},"json");
+
+		});
+	});
+</script>
 
 <!--<script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/common.js') }}?ver={{ $version }}"></script>

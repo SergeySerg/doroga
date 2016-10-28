@@ -72,7 +72,7 @@
                                 </td>
                                 <td>{{ $admin_article->created_at }}</td>
                                 <td class="hidden-480">{{ $admin_article->updated_at }}</td>
-                                <td class="hidden-phone">{{ $admin_article->price }}</td>
+                                <td class="hidden-phone">{{ $admin_article->getTranslate('price') }}</td>
 
                                 <td class="hidden-480">
                                     @if($admin_article->active)
