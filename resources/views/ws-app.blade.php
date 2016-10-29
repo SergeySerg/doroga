@@ -64,7 +64,7 @@
 			{{--start: Logo --}}
 			<div class="logo span3">
 
-				<a class="brand" href="/{{ App::getLocale() }}"><img src="{{ asset('/img/frontend/logo.png') }}" style="height: 50px;" alt="Logo"></a>
+				<a class="brand" href="/{{ App::getLocale() }}"><img src="{{ asset('/img/frontend/logo.png') }}" alt="Logo"></a>
 
 			</div>
 			{{--end: Logo --}}

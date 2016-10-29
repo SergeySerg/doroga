@@ -82,6 +82,7 @@ header {
 
 .logo img {
 	margin-top:8px;
+	height: 50px;
 }
 
 #social-links {
@@ -514,6 +515,9 @@ html[xmlns] .slides {display: block;}
 =================================================================== */
 .icons-box-vert-container {
 	float:left;
+}
+.icons-box-vert-container a{
+	color: #666666;
 }
 
 .icons-boxes-vert-container {
@@ -1536,6 +1540,13 @@ form#newsletter input[type=submit] {
 }
 .lang li a{
 	color: #666666;
+}
+.service-img-on-main{
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	width: 90px;
+	height: 90px;
 }
 /*soc icon
 =======================================================================*/

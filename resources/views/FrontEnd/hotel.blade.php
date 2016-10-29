@@ -31,10 +31,10 @@
 
                     @if(count($slide->getImages()) > 0)
 
-                        <img alt="{{$slide->getTranslate('title')}}" src="/{{$slide->getImages()[0]['full']}}"
-                             data-image="/{{$slide->getImages()[0]['full']}}"
-                             id="img-{{$slide->id}}"
-                             data-description=" {{$slide->getTranslate('description')}}">
+                        <img alt="{{$slide -> getTranslate('title')}}" src="/{{$slide -> getImages()[0]['full']}}"
+                             data-image="/{{$slide -> getImages()[0]['full']}}"
+                             id="img-{{$slide -> id}}"
+                             data-description=" {{$slide -> getTranslate('description')}}">
 
                     @endif
 
@@ -88,13 +88,14 @@
                     {{-- start: Icon Box Start --}}
                     <div class="span6">
 
-                        <div class="icons-box-vert">
+                        <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
 
-                            <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
+                            <div class="icons-box-vert">
 
-                                @if(count($service->getImages()) > 0)
 
-                                    <img alt="" class="circle-color" style="width: 90px; height: 90px" src="/{{ $service->getImages()[0]['min'] }}" data-holder-rendered="true" >
+                                @if(count($service -> getImages()) > 0)
+
+                                    <div class="circle-color service-img-on-main" style="background-image: url({{ $service->getImages()[0]['min'] }});" data-holder-rendered="true" ></div>
 
                                 @else
 
@@ -102,19 +103,19 @@
 
                                 @endif
 
-                            </a>
+                                <div class="icons-box-vert-info">
 
-                            <div class="icons-box-vert-info">
+                                    <h3>{{ str_limit($service -> getTranslate('title'),27,'...') }}</h3>
 
-                                <h3>{{ str_limit($service -> getTranslate('title'),27,'...') }}</h3>
+                                    <p>{!! str_limit($service -> getTranslate('description'),130,'...') !!}</p>
 
-                                <p>{!! str_limit($service -> getTranslate('description'),130,'...') !!}</p>
+                                </div>
+
+                                <div class="clear"></div>
 
                             </div>
 
-                            <div class="clear"></div>
-
-                        </div>
+                        </a>
 
                     </div>
                     {{-- end: Icon Box--}}
