@@ -2,32 +2,32 @@
 
 @section('content')
 
-    <!-- start: Page Title -->
+    {{-- start: Page Title --}}
     <div id="page-title">
 
         <div id="page-title-inner">
 
-            <!-- start: Container -->
+            {{-- start: Container --}}
             <div class="container">
 
                 <h2>{{ trans('base.rooms') }}</h2>
 
             </div>
-            <!-- end: Container  -->
+            {{-- end: Container  --}}
 
         </div>
 
     </div>
-    <!-- end: Page Title -->
+    {{-- end: Page Title --}}
 
     <div class="container">
 
-        <!-- start: Row -->
+        {{-- start: Row --}}
         <div class="row">
 
             @foreach($rooms as $room)
 
-                <!-- start: ServicesItem -->
+                {{-- start: ServicesItem --}}
                 <div class="services-wrap">
 
                     <div class="span12">
@@ -38,7 +38,7 @@
 
                     <div class="span3 center">
 
-                        <div class="circle-color main-img" style="background: url('/{{ $room->getImages()[0]['min'] }}') no-repeat center;"></div>
+                        <div class="circle-color main-img" style="background-image: url('/{{ $room->getImages()[0]['min'] }}');"></div>
 
                     </div>
 
@@ -60,7 +60,7 @@
 
                             <div class="row-fluid center">
 
-                                <button style="margin-top: 10px; border: 1px solid #6f2a2a;" type="button" class="btn btn-primary btn-lg btn-booking" data-toggle="modal" data-target="#myModal">
+                                <button type="button" class="btn btn-primary btn-lg btn-booking" data-toggle="modal" data-target="#myModal">
                                     {{ trans('base.booking') }}
                                 </button>
 
@@ -74,7 +74,7 @@
 
                     <div class="span12">
 
-                        <!-- start: Carousel -->
+                        {{-- start: Carousel --}}
                         @if(count($room -> getImages()) > 0)
 
                         <div id="webstudio-carousel-{{ $room -> id }}" class="webstudio-carousel" style="display:none;">
@@ -93,21 +93,21 @@
                         <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/frontend/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
 
                         @endif
-                        <!-- end: Carousel -->
+                        {{-- end: Carousel --}}
 
                     </div>
 
                 </div>
 
-                <!-- end: ServicesItem -->
+                {{-- end: ServicesItem --}}
             @endforeach
 
         </div>
-        <!-- end: Row -->
+        {{-- end: Row --}}
 
     </div>
 
-<!-- Modal -->
+{{-- Modal --}}
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <form id="bookingform" method="post">
@@ -201,7 +201,7 @@
 
                 </div>
                 <div class="modal-footer" style="text-align: center">
-                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    {{-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> --}}
                     <input name="submit" class="btn btn-primary" id="submit" tabindex="5" value="{{ trans('base.modal.bookingbutton') }}" type="submit">
                 </div>
                 <div id="token" style="display: none">{{csrf_token()}}</div>
@@ -209,5 +209,5 @@
         </form>
     </div>
 </div>
-<!-- /Modal -->
+{{-- /Modal --}}
 @stop

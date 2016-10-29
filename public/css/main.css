@@ -1344,7 +1344,7 @@ form#newsletter input[type=submit] {
 
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #003399;
+  background-color: #752c06;
 }
 
 .btn-warning {
@@ -1511,7 +1511,8 @@ form#newsletter input[type=submit] {
 	width: 150px;
 	height: 150px;
 	margin-bottom: 20px;
-	background-size: auto 150px;
+	background-position: center;
+	background-size: cover;
 }
 .webstudio-carousel,
 .webstudio-gallery{
@@ -1547,6 +1548,10 @@ form#newsletter input[type=submit] {
 	display: inline-block;
 	width: 90px;
 	height: 90px;
+}
+.btn-booking{
+	margin-top: 10px;
+	border: 1px solid #6f2a2a;
 }
 /*soc icon
 =======================================================================*/
