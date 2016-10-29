@@ -40,6 +40,24 @@
 	{{--start: Container --}}
 	<div class="container">
 
+		<div class="row">
+
+			<div class="span12">
+
+				<ul class="lang pull-right">
+
+					@foreach($langs as $lang)
+
+						<li><a href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a></li>
+
+					@endforeach
+
+				</ul>
+
+			</div>
+
+		</div>
+
 		{{--start: Row --}}
 		<div class="row">
 
@@ -75,16 +93,6 @@
 								<li @if(Request::is('*/contact'))class="active"@endif><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
 
 							</ul>
-
-							<span class="lang">
-
-								@foreach($langs as $lang)
-
-									<a href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a>
-
-								@endforeach
-
-							</span>
 
 						</div>
 
@@ -212,8 +220,8 @@
 			<ul class="soc">
 
 				<li><a class="soc-facebook" href="https://facebook.com"></a></li>
-				<li><a class="soc-odnoklassniki" href="#"></a></li>
-				<li><a class="soc-vkontakte soc-icon-last" href="#"></a></li>
+				<li><a class="soc-odnoklassniki" href="https://ok.ru/"></a></li>
+				<li><a class="soc-vkontakte soc-icon-last" href="https://vk.com"></a></li>
 
 			</ul>
 			{{-- end: Follow Us --}}

@@ -106,9 +106,9 @@
 
                             <div class="icons-box-vert-info">
 
-                                <h3>{{ str_limit($service -> getTranslate('title'),20,'...') }}</h3>
+                                <h3>{{ str_limit($service -> getTranslate('title'),27,'...') }}</h3>
 
-                                <p>{!! str_limit($service -> getTranslate('description'),95,'...') !!}</p>
+                                <p>{!! str_limit($service -> getTranslate('description'),130,'...') !!}</p>
 
                             </div>
 

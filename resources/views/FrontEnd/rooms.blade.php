@@ -20,55 +20,93 @@
     </div>
     <!-- end: Page Title -->
 
-
     <div class="container">
 
-    <!-- start: Row -->
-    <div class="row">
-        @foreach($rooms as $room)
-            <!-- start: ServicesItem -->
-            <div class="services-wrap">
-                <div class="span12">
-                    <div class="title"><h3>{{ $room -> getTranslate('title') }}</h3></div>
-                </div>
-                <div class="span3 center">
-                    <div class="circle-color main-img" style="background: url('/{{ $room->getImages()[0]['min'] }}') no-repeat center;"></div>
-                </div>
-                <div class="span6">
-                    <p> {!! $room -> getTranslate('description') !!}</p>
-                </div>
-                <div class="span3">
-                    <div class="testimonials">
-                        <h5 class="center">с 01.10.2016 по 31.10.2016</h5>
-                        <h3><span class="price">{{ $room -> getTranslate('price') }}</span></h3>
-                        <div class="row-fluid" style="text-align: center">
-                            <button style="margin-top: 10px" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                {{ trans('base.booking') }}
-                            </button>
+        <!-- start: Row -->
+        <div class="row">
+
+            @foreach($rooms as $room)
+
+                <!-- start: ServicesItem -->
+                <div class="services-wrap">
+
+                    <div class="span12">
+
+                        <div class="title"><h3>{{ $room -> getTranslate('title') }}</h3></div>
+
+                    </div>
+
+                    <div class="span3 center">
+
+                        <div class="circle-color main-img" style="background: url('/{{ $room->getImages()[0]['min'] }}') no-repeat center;"></div>
+
+                    </div>
+
+                    <div class="span6">
+
+                        <p> {!! $room -> getTranslate('description') !!}</p>
+
+                    </div>
+
+                    <div class="span3">
+
+                        <div class="testimonials">
+
+                            <div class="center">
+
+                                {!! $room -> getTranslate('price') !!}
+
+                            </div>
+
+                            <div class="row-fluid center">
+
+                                <button style="margin-top: 10px; border: 1px solid #6f2a2a;" type="button" class="btn btn-primary btn-lg btn-booking" data-toggle="modal" data-target="#myModal">
+                                    {{ trans('base.booking') }}
+                                </button>
+
+                            </div>
+
                         </div>
+
                     </div>
-                </div>
-                <div class="clear"></div>
-                <div class="span12">
-                    <!-- start: Carousel -->
-                    @if(count($room -> getImages()) > 0)
-                    <div id="webstudio-carousel-{{ $room -> id }}" class="webstudio-carousel" style="display:none;">
-                        @foreach($room -> getImages() as $imgSrc)
-                            <img alt="" src="/{{ $imgSrc['min'] }}"
-                                 data-image="/{{ $imgSrc['full'] }}">
-                        @endforeach
+
+                    <div class="clear"></div>
+
+                    <div class="span12">
+
+                        <!-- start: Carousel -->
+                        @if(count($room -> getImages()) > 0)
+
+                        <div id="webstudio-carousel-{{ $room -> id }}" class="webstudio-carousel" style="display:none;">
+
+                            @foreach($room -> getImages() as $imgSrc)
+
+                                <img alt="" src="/{{ $imgSrc['min'] }}"
+                                     data-image="/{{ $imgSrc['full'] }}">
+
+                            @endforeach
+
+                        </div>
+
+                        @else
+
+                        <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/frontend/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
+
+                        @endif
+                        <!-- end: Carousel -->
+
                     </div>
-                    @else
-                    <div class="img-block" style="border: 1px solid #E5AF51; background-image: url({{ asset('/img/frontend/no-img.png') }}); background-repeat: no-repeat; background-position: center;"></div>
-                    @endif
-                    <!-- end: Carousel -->
+
                 </div>
-            </div>
-            <!-- end: ServicesItem -->
-        @endforeach
+
+                <!-- end: ServicesItem -->
+            @endforeach
+
+        </div>
+        <!-- end: Row -->
+
     </div>
-    <!-- end: Row -->
-</div>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">

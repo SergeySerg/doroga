@@ -10,7 +10,7 @@
             {{-- start: Container --}}
             <div class="container">
 
-                <h2>{{ trans('base.hotel') }}</h2>
+                <h2>{{ trans('base.contacts') }}</h2>
 
             </div>
             {{-- end: Container  --}}
@@ -40,7 +40,7 @@
                 zoom: 16,
                 markers: [
                     {
-                        address: '{{ $texts->get('header.coordinates') }}', // Your Adress Here
+                        address: "{{ $texts->get('header.coordinates') }}", // Your Adress Here
                         html: '',
                         popup: false,
                     }

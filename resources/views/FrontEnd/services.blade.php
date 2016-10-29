@@ -41,8 +41,8 @@
                 <div class="testimonials">
                     <h3>
                         <span class="price">
-                            @if (($service->price) > 0 )
-                               {{ $service -> price }} {{ trans('base.currency') }}
+                            @if (($service -> price) > 0 )
+                               {{ $service -> getTranslate('price') }} {{ trans('base.currency') }}
                             @else
                                  {{ trans('base.free') }}
                             @endif
