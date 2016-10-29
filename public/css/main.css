@@ -1504,6 +1504,9 @@ form#newsletter input[type=submit] {
 .center{
 	text-align: center;
 }
+.services-wrap{
+	margin-bottom: 10px;
+}
 .services-wrap .title{
 	margin-bottom: 25px;
 }
@@ -1517,6 +1520,7 @@ form#newsletter input[type=submit] {
 .webstudio-carousel,
 .webstudio-gallery{
 	margin-bottom: 20px;
+	margin-top: 10px;
 }
 #webstudio-slider{
 	margin-top: -86px;
