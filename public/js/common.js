@@ -1,3 +1,8 @@
+var pageHash = window.location.hash.substr(1);
+if(pageHash.indexOf("service") + 1){
+	window.location.hash = '';
+}
+
 jQuery(document).ready(function($){
 
 	/* ------------------ Back To Top ------------------- */

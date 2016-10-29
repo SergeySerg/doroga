@@ -29,7 +29,7 @@
             @foreach($services as $service)
 
                 {{-- start: ServicesItem --}}
-                <div class="services-wrap">
+                <div id="service-{{ $service -> id }}" class="services-wrap">
 
                     <div class="span12">
 
