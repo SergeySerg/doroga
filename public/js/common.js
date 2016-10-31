@@ -107,8 +107,10 @@ jQuery(document).ready(function($){
 	});
 	/* Start script for booking */
 	$('.book').click(function(){
+		$('#bookingform input[name="submit"]').prop('disabled', false);
 		var id_room = $(this).attr('data-room-id');
 		$('#select_room').children("option[data-room-id='" + id_room + "']").prop('selected','true');
 	});
+
 	/* End script for booking */
 });
