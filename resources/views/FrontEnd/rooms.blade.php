@@ -32,7 +32,7 @@
 
                     <div class="span12">
 
-                        <div class="title"><h3>{{ $room -> getTranslate('title') }}</h3></div>
+                        <div class="title" id = {{ $room -> id }}><h3>{{ $room -> getTranslate('title') }}</h3></div>
 
                     </div>
 
@@ -68,7 +68,7 @@
 
                             <div class="row-fluid center">
 
-                                <button type="button" class="btn btn-primary btn-lg btn-booking" data-toggle="modal" data-target="#myModal">
+                                <button type="button" data-room-id = "{{ $room -> id }}" class="btn btn-primary btn-lg btn-booking book" data-toggle="modal" data-target="#myModal">
                                     {{ trans('base.booking') }}
                                 </button>
 
@@ -140,7 +140,7 @@
 
                                     @foreach($rooms as $room)
 
-                                        <option value = "{{ $room -> getTranslate('title') }}">{{ $room -> getTranslate('title') }}</option>
+                                        <option data-room-id="{{ $room -> id }}" value = "{{ $room -> getTranslate('title') }}">{{ $room -> getTranslate('title') }}</option>
 
                                     @endforeach
 
