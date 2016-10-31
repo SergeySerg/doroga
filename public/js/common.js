@@ -104,6 +104,7 @@ jQuery(document).ready(function($){
 
 	$('.date-picker').datepicker().next().on('click', function(){
 		$(this).prev().focus();
+		
 	});
 	/* Start script for booking */
 	$('.book').click(function(){
@@ -113,4 +114,5 @@ jQuery(document).ready(function($){
 	});
 
 	/* End script for booking */
+
 });
