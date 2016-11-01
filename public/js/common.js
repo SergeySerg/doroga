@@ -5,6 +5,10 @@ if(pageHash.indexOf("service") + 1){
 
 jQuery(document).ready(function($){
 
+	if ($('#' + pageHash).length != 0) {
+		$('html, body').animate({scrollTop: $('#' + pageHash).offset().top}, 500);
+	}
+
 	/* ------------------ Back To Top ------------------- */
 
 	jQuery('#footer-menu-back-to-top a').click(function(){

@@ -83,8 +83,6 @@
 
                     </div>
 
-                    <div class="clear"></div>
-
                     <div class="span12">
 
                         {{-- start: Carousel --}}
@@ -105,6 +103,8 @@
                         {{-- end: Carousel --}}
 
                     </div>
+                    <div class="clear"></div>
+
 
                 </div>
                 {{-- end: ServicesItem --}}
