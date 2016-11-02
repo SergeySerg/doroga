@@ -236,7 +236,8 @@ class AdminArticlesController extends Controller {
 		}
 		//Формирование массива типа (ua|ru|en)
 		foreach($langs as $lang){
-			$all['price'] .= $all["price_{$lang['lang']}"] .'|';
+			//$all['price'] .= $all["price_{$lang['lang']}"] .'|';
+			$all['price'] .= (isset($all["price_{$lang['lang']}"]) ? $all["price_{$lang['lang']}"] : '') .'|';
 			$all['title'] .= $all["title_{$lang['lang']}"] .'|';
 			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
 			$all['meta_title'] .= (isset($all["meta_title_{$lang['lang']}"]) ? $all["meta_title_{$lang['lang']}"] : '') .'|';
