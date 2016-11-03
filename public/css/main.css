@@ -1558,6 +1558,25 @@ form#newsletter input[type=submit] {
 	margin-top: 10px;
 	border: 1px solid #6f2a2a;
 }
+.testimonials{
+	padding: 10px 20px;
+}
+.r-price span{
+	display: inline-block;
+	width: 60%;
+	text-align: left;
+}
+.r-price h3{
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+	line-height: 27px;
+	font-size: 21px;
+}
+#wrapper p{
+	text-indent: 10px;
+	margin: 0 0 5px;
+}
 /*soc icon
 =======================================================================*/
 
@@ -1661,7 +1680,7 @@ form#newsletter input[type=submit] {
 @media only screen and (min-width: 960px) {
 	
 	header {
-		height: 85px;
+		height: 64px;
 	}
 	
 	#wrapper {

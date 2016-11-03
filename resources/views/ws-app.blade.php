@@ -40,6 +40,7 @@
 	{{--start: Container --}}
 	<div class="container">
 
+{{--
 		<div class="row">
 
 			<div class="span12">
@@ -57,6 +58,7 @@
 			</div>
 
 		</div>
+--}}
 
 		{{--start: Row --}}
 		<div class="row">
@@ -86,10 +88,11 @@
 
 							<ul class="nav">
 
-								<li @if(Request::is('/{{ App::getLocale() }}')) class="active"@endif><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
+								<li @if(Request::is('ua')) class="active"@endif><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
 								<li @if(Request::is('*/rooms'))class="active"@endif><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
 								<li @if(Request::is('*/services'))class="active"@endif><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
 								<li @if(Request::is('*/gallery'))class="active"@endif><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
+								<li @if(Request::is('*/comments'))class="active"@endif><a href="/{{ App::getLocale() }}/comments">{{ trans('base.comments') }}</a></li>
 								<li @if(Request::is('*/contact'))class="active"@endif><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
 
 							</ul>
@@ -156,6 +159,7 @@
 						<li><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
 						<li><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
 						<li><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
+						<li><a href="/{{ App::getLocale() }}/comments">{{ trans('base.comments') }}</a></li>
 						<li><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
 
 					</ul>
@@ -220,7 +224,9 @@
 			<ul class="soc">
 
 				<li><a class="soc-facebook" href="https://facebook.com"></a></li>
+{{--
 				<li><a class="soc-odnoklassniki" href="https://ok.ru/"></a></li>
+--}}
 				<li><a class="soc-vkontakte soc-icon-last" href="https://vk.com"></a></li>
 
 			</ul>

@@ -17,6 +17,7 @@ return [
 	'rooms' => 'Номера',
 	'services' => 'Услуги',
 	'gallery' => 'Галлерея',
+	'comments' => 'Отзывы',
 	'contacts' => 'Контакты',
 	'menu' => 'Меню',
 	/* End Header */

@@ -18,6 +18,7 @@ return [
 	'services' => 'Services',
 	'events' => 'Events',
 	'gallery' => 'Gallery',
+	'comments' => 'Comments',
 	'contacts' => 'Contacts',
 	'booking' => 'Booking',
 	'tour' => '3D-tour',

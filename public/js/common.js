@@ -76,7 +76,7 @@ jQuery(document).ready(function($){
 	$('.webstudio-gallery').each(function(){
 		$(this).unitegallery({
 			gallery_theme: "tiles",
-			tiles_type: "justified"
+			tiles_type: "justified",
 		});
 	});
 
@@ -84,7 +84,7 @@ jQuery(document).ready(function($){
 		gallery_theme: "slider",
 		tiles_justified_space_between:0,
 		gallery_width:'100%',							//gallery width
-		gallery_height:300,								//gallery height
+		gallery_height:450,								//gallery height
 		gallery_max_height: 300,
 		slider_control_zoom: false,
 		slider_enable_text_panel: true,			 		//true,false - enable the text panel

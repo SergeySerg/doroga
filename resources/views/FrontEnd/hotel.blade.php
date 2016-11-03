@@ -66,6 +66,7 @@
         {{--end: Row--}}
 
         {{--start: Row --}}
+{{--
         <div class="row">
 
             <div class="span12">
@@ -75,17 +76,23 @@
             </div>
 
         </div>
+--}}
         {{--end: Row--}}
 
         {{-- start: Row --}}
+{{--
         <div class="row">
 
-            {{-- start: Icon Boxes --}}
+            --}}
+{{-- start: Icon Boxes --}}{{--
+
             <div class="icons-box-vert-container">
 
                 @foreach($services as $service)
 
-                    {{-- start: Icon Box Start --}}
+                    --}}
+{{-- start: Icon Box Start --}}{{--
+
                     <div class="span6">
 
                         <a href="/{{ App::getLocale() }}/services/#service-{{ $service -> id }}">
@@ -118,17 +125,22 @@
                         </a>
 
                     </div>
-                    {{-- end: Icon Box--}}
+                    --}}
+{{-- end: Icon Box--}}{{--
+
 
                 @endforeach
 
 
             </div>
-            {{-- end: Icon Boxes --}}
+            --}}
+{{-- end: Icon Boxes --}}{{--
+
 
             <div class="clear"></div>
 
         </div>
+--}}
         {{-- end: Row --}}
 
     </div>

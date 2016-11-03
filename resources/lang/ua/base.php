@@ -19,6 +19,7 @@ return [
 	'services' => 'Послуги',
 	'events' => 'Події',
 	'gallery' => 'Галерея',
+	'comments' => 'Відгуки',
 	'contacts' => 'Контакти',
 	'booking' => 'Бронювання',
 	'tour' => '3D-тур',

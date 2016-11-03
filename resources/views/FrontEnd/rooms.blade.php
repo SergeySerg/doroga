@@ -50,21 +50,17 @@
 
                     </div>
 
-                    <div class="span6">
+                    <div class="span5">
 
                         <p> {!! $room -> getTranslate('description') !!}</p>
 
                     </div>
 
-                    <div class="span3">
+                    <div class="span4">
 
-                        <div class="testimonials">
-
-                            <div class="center">
+                        <div class="testimonials r-price">
 
                                 {!! $room -> getTranslate('price') !!}
-
-                            </div>
 
                             <div class="row-fluid center">
 
