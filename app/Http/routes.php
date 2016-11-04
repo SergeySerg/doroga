@@ -84,12 +84,18 @@ Route::group(['prefix'=>'admin30x5', 'middleware' => ['auth', 'backend.init']], 
 	Route::get('/texts/{id}','Backend\AdminTextsController@edit');//Вывод формы редакторирование
 	Route::put('/texts/{id}','Backend\AdminTextsController@update');//Сохранение после редактирования
 
+	Route::get('/comments/{article_id}','Backend\AdminCommentsController@index');//Вывод списка
+	Route::get('/comments/{article_id}/create','Backend\AdminCommentsController@create');//Вывод формы создания элемента
+	Route::post('/comments/{article_id}/create','Backend\AdminCommentsController@store');//Сохранение элемента
+	Route::delete('/comments/{article_id}/{id}','Backend\AdminCommentsController@destroy');//Удаление элемента
+	Route::get('/comments/{article_id}/{id}','Backend\AdminCommentsController@edit');//Вывод формы редакторирование
+	Route::put('/comments/{article_id}/{id}','Backend\AdminCommentsController@update');//Сохранение после редактирования
 });
 
 Route::group(['middleware' => 'frontend.init'], function(){
 	Route::get('/{lang}/booking', 'Frontend\BookingController@index');
 	Route::get('/{lang}/3dtour', 'Frontend\TourController@index');
-	Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index')->where('type', 'hotel|rooms|services|gallery|contact');
+	Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index')->where('type', 'hotel|rooms|services|gallery|contact|comments');
 });
 
 

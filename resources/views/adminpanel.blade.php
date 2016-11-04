@@ -87,11 +87,6 @@
             </a><!--/.brand-->
 
             <ul class="nav ace-nav pull-right">
-                <li class="purple">
-                    <a  class="dropdown-toggle" target="_blank" href="{{ asset('/') }}">
-                        <span class="badge badge-important">Перейти на сайт</span>
-                    </a>
-                </li>
 
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
@@ -105,14 +100,14 @@
                     </a>
 
                     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
-                        <!-- <li>
-                             <a href="#">
+                         <li>
+                             <a target="_blank" href="{{ asset('/') }}">
                                  <i class="icon-cog"></i>
-                                 Settings
+                                 Перейти на сайт
                              </a>
                          </li>
 
-                         <li>
+                       <!--  <li>
                              <a href="#">
                                  <i class="icon-user"></i>
                                  Profile
@@ -208,6 +203,12 @@
             <a href="{{ $url }}/texts">
                 <i class="icon-hospital"></i>
                 <span class="menu-text"> Текстові блоки </span>
+            </a>
+            </li>
+            <li @if(Request::is('*/comments'))class="active"@endif>
+            <a href="{{ $url }}/comments/28">
+                <i class="icon-hospital"></i>
+                <span class="menu-text"> Коментарі </span>
             </a>
             </li>
         </ul><!--/.nav-list-->

@@ -8,6 +8,9 @@ class Article extends Translate {
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
     public function getImages(){
         if (isset($this->imgs)){
             $imgs = json_decode($this->imgs, true);
