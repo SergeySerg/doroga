@@ -65,7 +65,22 @@ return [
 /* Gallery Page */
 	'gallerycontenttitle' => 'Gallery',
 /* End Gallery Page */
-/* Footer*/
+/* Comments Page */
+	'contact.form' => 'Write a comment',
+	'contact.name' => 'Name',
+	'contact.phone' => 'Phone',
+	'contact.mail' => 'E-mail',
+	'contact.rank' => 'Rank',
+	'contact.rank.verybad' => 'Very bad',
+	'contact.rank.bad' => 'Bad',
+	'contact.rank.normal' => 'Normal',
+	'contact.rank.good' => 'Good',
+	'contact.rank.verygood' => 'Very good',
+	'contact.text' => 'Comment',
+	'contact.button' => 'Send',
+/* End Comments Page */
+
+	/* Footer*/
 	'hotelphoto' => 'Hotels photo ',
 	'callback' => 'Write us',
 	'name' => 'Your Name',

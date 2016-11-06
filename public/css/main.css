@@ -1578,6 +1578,38 @@ form#newsletter input[type=submit] {
 	text-indent: 10px;
 	margin: 0 0 5px;
 }
+
+#comments-form{
+	margin-bottom: 20px;
+}
+.r-comments .input-xlarge{
+	width: 90%;
+	margin-right: 10%;
+}
+.r-comments .actions{
+	width: 93%;
+	text-align: right;
+}
+.r-comments select.input-xlarge{
+	width: 94%;
+	color: #666666;
+}
+@media (max-width: 767px){
+	.r-comments select.input-xlarge{
+		width: 90%;
+	}
+}
+.comments-rank{
+	float: right;
+	color: #a64a1a;
+}
+.comments-title h4.comments-date{
+	border-bottom: none !important;
+	margin-top: 15px;
+}
+.comments-text{
+	margin-bottom: 20px;
+}
 /*soc icon
 =======================================================================*/
 
