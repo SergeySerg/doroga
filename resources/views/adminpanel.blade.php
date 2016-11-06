@@ -194,7 +194,7 @@
             </li>
             <li @if(Request::is('*/comments'))class="active"@endif>
             <a href="{{ $url }}/comments/28">
-                <i class="icon-hospital"></i>
+                <i class="icon-list"></i>
                 <span class="menu-text"> Коментарі </span>
             </a>
             </li>

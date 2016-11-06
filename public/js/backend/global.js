@@ -68,10 +68,7 @@ $(function(){
     $('.comment-save').on('click', function(event){
         //alert('tut');
         get_wysiwyg();
-        var rate = $('#form-field-select-1 :selected').val();
         var data = $('form#comment-form').serialize();
-        console.log( data );
-        console.log( rate );
         $.ajax({
             url: '',
             method: "POST",

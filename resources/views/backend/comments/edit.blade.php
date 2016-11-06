@@ -83,15 +83,15 @@
                         <label  class="control-label" for="form-field-select-1">Оцінка</label>
 
                         <div class="controls">
-                            <select id="form-field-select-1">
+                            <select id="form-field-select-1" name="rate">
                                 @if(isset($admin_comment))
                                     <option   value='{{$admin_comment->rate}}' select="selected" />{{ $admin_comment->getRate($admin_comment->rate) }}
                                 @endif
-                                <option value="5" />Відмінно
-                                <option value="4" />Добре
-                                <option value="3" />Задовільно
-                                <option value="2" />Погано
-                                <option value="1" />Дуже погано
+                                <option value="5">Відмінно</option>
+                                <option value="4">Добре</option>
+                                <option value="3">Задовільно</option>
+                                <option value="2">Погано</option>
+                                <option value="1">Дуже погано</option>
                             </select>
 
                         </div>
