@@ -48,7 +48,8 @@ class AdminCommentsController extends Controller {
 	public function create($article_id)
 	{
 		return view('backend.comments.edit', [
-			'action_method' => 'post'
+			'action_method' => 'post',
+			'article_id' => $article_id
 		]);
 	}
 
@@ -57,9 +58,20 @@ class AdminCommentsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request, $article_id)
 	{
-		//
+		$this->validate($request, [
+			'user_name' => 'required|max:20',
+			'comment' => 'required|max:600',
+
+		]);
+		$all = $request->all();
+		Comment::create($all);
+		return response()->json([
+			"status" => 'success',
+			"message" => 'Успішно збережено',
+			"redirect" => URL::to('/admin30x5/comments/'.$article_id)
+		]);
 	}
 
 	/**
@@ -85,7 +97,8 @@ class AdminCommentsController extends Controller {
 		$admin_comment = Comment::where("id","=","$id")->first();
 		return view('backend.comments.edit',[
 			'admin_comment'=> $admin_comment,
-			'action_method' => 'put'
+			'action_method' => 'put',
+			'article_id' => $article_id
 		]);
 	}
 
@@ -95,9 +108,17 @@ class AdminCommentsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $article_id, $id)
 	{
-		//
+		$admin_comment = Comment::where("id","=","$id")->first();
+		$all = $request->all();
+		$admin_comment->update($all);
+		$admin_comment->save();
+		return response()->json([
+			"status" => 'success',
+			"message" => 'Успішно збережено',
+			"redirect" => URL::to('/admin30x5/comments/'.$article_id)
+		]);
 	}
 
 	/**
@@ -106,9 +127,22 @@ class AdminCommentsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($article_id, $id)
 	{
-		//
+		$admin_comment = Comment::where('id', '=', $id)->first();
+		if($admin_comment AND $admin_comment->delete()){
+
+			return response()->json([
+				"status" => 'success',
+				"message" => 'Успішно видалено'
+			]);
+		}
+		else{
+			return response()->json([
+				"status" => 'error',
+				"message" => 'Виникла помилка при видаленні при удалении'
+			]);
+		}
 	}
 
 

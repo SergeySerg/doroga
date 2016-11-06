@@ -67,7 +67,7 @@
                             </label>
                         </td>
                         <td>{{ $admin_comment->getRate($admin_comment->rate) }}</td>
-                        <td><a href="{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}">{{ str_limit($admin_comment->comment, 80, '...') }}</a></td>
+                        <td><a href="{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}">{!! str_limit($admin_comment->comment, 80, '...') !!}</a></td>
                         <td>{{date('d-m-Y',strtotime($admin_comment->date))}}</td>
                         <td>
                             @if($admin_comment->active)
@@ -81,7 +81,7 @@
                                 <a class="green" href="{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}">
                                     <i class="icon-pencil bigger-130"></i>
                                 </a>
-                                <a href='{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}' data-id='{{$admin_comment->id}}' class='resource-delete'>
+                                <a href='{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}' data-id='{{$admin_comment->id}}' class='comment-delete'>
                                     <i class="icon-trash bigger-130"></i>
                                 </a>
                             </div>

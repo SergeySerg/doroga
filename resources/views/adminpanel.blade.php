@@ -192,6 +192,12 @@
                 <span class="menu-text"> Слайдер </span>
             </a>
             </li>
+            <li @if(Request::is('*/comments'))class="active"@endif>
+            <a href="{{ $url }}/comments/28">
+                <i class="icon-hospital"></i>
+                <span class="menu-text"> Коментарі </span>
+            </a>
+            </li>
             <li @if(Request::is('*/seo'))class="active"@endif>
                 <a href="{{ $url }}/articles/seo">
 
@@ -205,12 +211,7 @@
                 <span class="menu-text"> Текстові блоки </span>
             </a>
             </li>
-            <li @if(Request::is('*/comments'))class="active"@endif>
-            <a href="{{ $url }}/comments/28">
-                <i class="icon-hospital"></i>
-                <span class="menu-text"> Коментарі </span>
-            </a>
-            </li>
+
         </ul><!--/.nav-list-->
 
        <!-- <div class="sidebar-collapse" id="sidebar-collapse">

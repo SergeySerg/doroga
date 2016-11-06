@@ -1,7 +1,7 @@
 
 $(function(){
     $('.resource-delete').on('click', function(event){
-        if(confirm('Вы уверены?')){
+        if(confirm('Ви впевненні?')){
             var $thisEl = $(this);
             $.ajax({
                 url: $thisEl.attr('href'),
@@ -64,7 +64,74 @@ $(function(){
         event.preventDefault();
 
     });
+    //Збереження коментаря
+    $('.comment-save').on('click', function(event){
+        //alert('tut');
+        get_wysiwyg();
+        var rate = $('#form-field-select-1 :selected').val();
+        var data = $('form#comment-form').serialize();
+        console.log( data );
+        console.log( rate );
+        $.ajax({
+            url: '',
+            method: "POST",
+            data: data,
+            success: function(data){
+                console.info('Server response: ', data);
+                if(data.status == 'success'){
+                    alert(data.message);
+                }else{
+                    alert('Помилка: ' + data.message)
+                }
 
+                if(data.redirect){
+                    document.location = data.redirect;
+                }
+                if(data.status == 'fail'){
+                    alert(data.message);
+                }
+            },
+            error: function(data, type, details){
+                console.info('Server error: ', arguments);
+
+                var message = 'Помилка збереження:\n';
+                if(data.responseJSON){
+                    for(var key in data.responseJSON){
+                        message += data.responseJSON[key] + '\n';
+                    }
+                }else{
+                    message += details;
+                }
+
+                alert(message);
+            }
+        });
+        event.preventDefault();
+
+    });
+    //Видалення коментаря
+    $('.comment-delete').on('click', function(event){
+        if(confirm('Ви впевненні?')){
+            var $thisEl = $(this);
+            $.ajax({
+                url: $thisEl.attr('href'),
+                method: "POST",
+                data: {
+                    '_method': 'Delete',
+                    '_token' : $('#token').text()
+                },
+                success: function(data){
+                    console.info('Server response: ', data);
+                    if(data.status == 'success'){
+                        $thisEl.parents('tr').fadeOut(3000);
+                    }
+                    alert(data.message);
+                }
+            })
+        }
+        event.preventDefault();
+
+    });
     init_wysiwyg();
 });
 

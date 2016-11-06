@@ -21,13 +21,13 @@ class Comment extends Translate {
     }
     public function getRate($rate){
         switch ($rate){
-            case '5': $rate = 'Дуже добре';
+            case '5': $rate = 'Відмінно';
                 return $rate;
                 break;
             case '4': $rate = 'Добре';
                 return $rate;
                 break;
-            case '3': $rate = 'Нормально';
+            case '3': $rate = 'Задовільно';
                 return $rate;
                 break;
             case '2': $rate = 'Погано';

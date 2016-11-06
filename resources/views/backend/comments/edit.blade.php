@@ -42,7 +42,7 @@
             <div class="span12">
                 <!--PAGE CONTENT BEGINS-->
 
-                <form class="form-horizontal" id="resource-form" method="POST" action="" />
+                <form class="form-horizontal" id="comment-form" method="POST" action="" />
 
                     <div class="control-group">
                         <label class="control-label" for="form-field-2">Пріоритет</label>
@@ -84,17 +84,14 @@
 
                         <div class="controls">
                             <select id="form-field-select-1">
-                                <option  @if(isset($admin_comment)) value='{{$admin_comment->rate}}' select="selected" />{{ $admin_comment->getRate($admin_comment->rate) }}@endif
-                                <option value="5" />Дуже добре
+                                @if(isset($admin_comment))
+                                    <option   value='{{$admin_comment->rate}}' select="selected" />{{ $admin_comment->getRate($admin_comment->rate) }}
+                                @endif
+                                <option value="5" />Відмінно
                                 <option value="4" />Добре
-                                <option value="3" />Нормально
+                                <option value="3" />Задовільно
                                 <option value="2" />Погано
                                 <option value="1" />Дуже погано
-
-
-
-
-
                             </select>
 
                         </div>
@@ -131,9 +128,10 @@
                     </div>
                     <div class="space-4"></div>
                     <input type="hidden" name="_method" value='{{$action_method}}'/>
+                    <input type="hidden" name="article_id" value='{{$article_id}}'/>
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-actions">
-                        <button class="btn btn-info resource-save" type="button">
+                        <button class="btn btn-info comment-save" type="button">
                             <i class="icon-ok bigger-110"></i>
                             Сохранить
                         </button>
