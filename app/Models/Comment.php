@@ -3,12 +3,23 @@
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Translate {
+    protected $table = "comments";
+    protected $fillable = [
+        'article_id',
+        'rate',
+        'user_name',
+        'user_phone',
+        'user_email',
+        'comment',
+        'priority',
+        'date',
+        'active'
+    ];
 
     public function articles(){
         return $this->belongsTo('App\Models\Article');
     }
     public function getRate($rate){
-        //dd($rate);
         switch ($rate){
             case '5': $rate = 'Дуже добре';
                 return $rate;
@@ -26,7 +37,6 @@ class Comment extends Translate {
                 return  $rate;
                 break;
         }
-//return $rate;
     }
 
 }

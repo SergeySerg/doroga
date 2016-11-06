@@ -25,10 +25,10 @@
 
                 <div class="table-header">
                     Список каментарів
-                    <a href="{{ $url }}/comments/create">
+                    <a href="{{ $url }}/comments/{{ $article_id }}/create">
                         <button class="btn btn-warning">
                             <i class="icon-plus"></i>
-                            Додати коментар
+                            Додати Коментар
                         </button>
                     </a>
                 </div>
@@ -78,10 +78,10 @@
                         <td class="center">{{ $admin_comment->priority }}</td>
                         <td class="td-actions">
                             <div class="visible-phone visible-desktop action-buttons">
-                                <a class="green" href="{{ $url }}/comments//{{$admin_comment->article_id}}/{{$admin_comment->id}}">
+                                <a class="green" href="{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}">
                                     <i class="icon-pencil bigger-130"></i>
                                 </a>
-                                <a href='{{ $url }}/comments//{{$admin_comment->article_id}}/{{$admin_comment->id}}' data-id='{{$admin_comment->id}}' class='resource-delete'>
+                                <a href='{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}' data-id='{{$admin_comment->id}}' class='resource-delete'>
                                     <i class="icon-trash bigger-130"></i>
                                 </a>
                             </div>

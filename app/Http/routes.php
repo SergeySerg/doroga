@@ -84,11 +84,11 @@ Route::group(['prefix'=>'admin30x5', 'middleware' => ['auth', 'backend.init']], 
 	Route::get('/texts/{id}','Backend\AdminTextsController@edit');//Вывод формы редакторирование
 	Route::put('/texts/{id}','Backend\AdminTextsController@update');//Сохранение после редактирования
 
-	Route::get('/comments/{article_id}','Backend\AdminCommentsController@index');//Вывод списка
-	Route::get('/comments/{article_id}/create','Backend\AdminCommentsController@create');//Вывод формы создания элемента
+	Route::get('/comments/{article_id}','Backend\AdminCommentsController@index');//Вывод списка..
+	Route::get('/comments/{article_id}/create','Backend\AdminCommentsController@create');//Вывод формы создания элемента..
 	Route::post('/comments/{article_id}/create','Backend\AdminCommentsController@store');//Сохранение элемента
 	Route::delete('/comments/{article_id}/{id}','Backend\AdminCommentsController@destroy');//Удаление элемента
-	Route::get('/comments/{article_id}/{id}','Backend\AdminCommentsController@edit');//Вывод формы редакторирование
+	Route::get('/comments/{article_id}/{id}','Backend\AdminCommentsController@edit');//Вывод формы редакторирование..
 	Route::put('/comments/{article_id}/{id}','Backend\AdminCommentsController@update');//Сохранение после редактирования
 });
 
