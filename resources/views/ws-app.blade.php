@@ -3,9 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Дорога додому</title>
+{{--
 	<meta name="title" content="{{ $meta ->getTranslate('meta_title') }}">
 	<meta name="description" content="{{ $meta ->getTranslate('meta_description') }}">
 	<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
+--}}
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,6 +31,7 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/backend/font-awesome.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
 	{{-- end: CSS --}}
 
 </head>

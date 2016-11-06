@@ -66,6 +66,20 @@ return [
 	/* Gallery Page */
 	'gallerycontenttitle' => 'Галерея',
 	/* End Gallery Page */
+	/* Comments Page */
+	'contact.form' => 'Залишити відгук',
+	'contact.name' => 'Ім\'я',
+	'contact.phone' => 'Телефон',
+	'contact.mail' => 'E-mail',
+	'contact.rank' => 'Оцінка',
+	'contact.rank.verybad' => 'Дуже погано',
+	'contact.rank.bad' => 'Погано',
+	'contact.rank.normal' => 'Нормально',
+	'contact.rank.good' => 'Добре',
+	'contact.rank.verygood' => 'Дуже добре',
+	'contact.text' => 'Відгук',
+	'contact.button' => 'Відправити',
+	/* End Comments Page */
 
 	/* Footer*/
 	'hotelphoto' => 'Фото готелю',

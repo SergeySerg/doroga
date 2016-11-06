@@ -987,6 +987,7 @@ textarea {
   height: auto;
 }
 
+select,
 textarea,
 input[type="text"],
 input[type="password"],

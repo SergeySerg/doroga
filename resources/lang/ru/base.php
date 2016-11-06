@@ -62,7 +62,21 @@ return [
 /* Gallery Page */
 	'gallerycontenttitle' => 'Галлерея',
 /* End Gallery Page */
-/* Footer*/
+/* Comments Page */
+	'contact.form' => 'Оставить отзыв',
+	'contact.name' => 'Имя',
+	'contact.phone' => 'Телефон',
+	'contact.mail' => 'E-mail',
+	'contact.rank' => 'Оценка',
+	'contact.rank.verybad' => 'Очень плохо',
+	'contact.rank.bad' => 'Плохо',
+	'contact.rank.normal' => 'Нормально',
+	'contact.rank.good' => 'Хорошо',
+	'contact.rank.verygood' => 'Отлично',
+	'contact.text' => 'Отзыв',
+	'contact.button' => 'Отправить',
+/* End Comments Page */
+	/* Footer*/
 	'hotelphoto' => 'Фото отеля ',
 	'callback' => 'Напишите нам',
 	'name' => 'Ваше имя',
