@@ -84,12 +84,16 @@
 
                         <div class="controls">
                             <select id="form-field-select-1">
-                                <option  @if(isset($admin_comment)) value='{{$admin_comment->rate}}' select="selected" @endif />{{ $admin_comment->getRate($admin_comment->rate) }}
-                                <option value="1" />Дуже погано
-                                <option value="2" />Погано
-                                <option value="3" />Нормально
-                                <option value="4" />Добре
+                                <option  @if(isset($admin_comment)) value='{{$admin_comment->rate}}' select="selected" />{{ $admin_comment->getRate($admin_comment->rate) }}@endif
                                 <option value="5" />Дуже добре
+                                <option value="4" />Добре
+                                <option value="3" />Нормально
+                                <option value="2" />Погано
+                                <option value="1" />Дуже погано
+
+
+
+
 
                             </select>
 

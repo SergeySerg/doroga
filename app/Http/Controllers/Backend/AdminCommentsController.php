@@ -35,7 +35,8 @@ class AdminCommentsController extends Controller {
 		->sortByDesc("priority");
 			//dd($admin_comments);
 		return view('backend.comments.list',[
-			'admin_comments' => $admin_comments
+			'admin_comments' => $admin_comments,
+			'article_id' => $article_id
 		]);
 	}
 
@@ -44,9 +45,11 @@ class AdminCommentsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($article_id)
 	{
-		//
+		return view('backend.comments.edit', [
+			'action_method' => 'post'
+		]);
 	}
 
 	/**
@@ -80,9 +83,6 @@ class AdminCommentsController extends Controller {
 	{
 
 		$admin_comment = Comment::where("id","=","$id")->first();
-		//dd($admin_comment);
-		//$rate = $admin_comment['rate'];
-		//dd($rate);
 		return view('backend.comments.edit',[
 			'admin_comment'=> $admin_comment,
 			'action_method' => 'put'
