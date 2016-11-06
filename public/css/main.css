@@ -1607,6 +1607,9 @@ form#newsletter input[type=submit] {
 	border-bottom: none !important;
 	margin-top: 15px;
 }
+.comments-date .fa{
+	margin-right: 10px;
+}
 .comments-text{
 	margin-bottom: 20px;
 }

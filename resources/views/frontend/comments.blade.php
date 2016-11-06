@@ -27,7 +27,7 @@
 
             <div class="title comments-title clearfix">
                 <div class="span4"><h3 class="comments-name">Василь Щедрий</h3></div>
-                <div class="span4 center"><h4 class="comments-date">22 липня 2016</h4></div>
+                <div class="span4 center"><h4 class="comments-date"><i class="fa fa-calendar" aria-hidden="true"></i>22 липня 2016</h4></div>
                 <div class="span4"><h3 class="comments-rank">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
