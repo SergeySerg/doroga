@@ -74,9 +74,9 @@ return [
 	'contact.rank' => 'Оцінка',
 	'contact.rank.verybad' => 'Дуже погано',
 	'contact.rank.bad' => 'Погано',
-	'contact.rank.normal' => 'Нормально',
+	'contact.rank.normal' => 'Задовільно',
 	'contact.rank.good' => 'Добре',
-	'contact.rank.verygood' => 'Дуже добре',
+	'contact.rank.verygood' => 'Відмінно',
 	'contact.text' => 'Відгук',
 	'contact.button' => 'Відправити',
 	/* End Comments Page */

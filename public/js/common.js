@@ -119,4 +119,32 @@ jQuery(document).ready(function($){
 
 	/* End script for booking */
 
+
+});
+document.addEventListener("DOMContentLoaded", function(){
+/*Start script for comments*/
+$('#comment-send').on('click', function(event){
+	var data = $('form#commenting-form').serialize();
+	$.ajax({
+		url: '',
+		method: "POST",
+		data: data,
+		dataType : "json",
+		success: function(data){
+			console.info('Server response: ', data);
+			if(data.status == 'success'){
+				swal ("Ваше повідомлення успішно відправлено!");
+				jQuery("#commenting-form").trigger("reset");
+				window.location.href = '/';
+			}
+		},
+		error:function(data){
+			swal ("Сталася помилка при відправці повідомлення!");
+			jQuery("#commenting-form").trigger("reset");
+		}
+	},"json");
+	event.preventDefault();
+
+});
+/*End script for comments*/
 });
