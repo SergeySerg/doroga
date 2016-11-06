@@ -81,6 +81,8 @@ class AdminCommentsController extends Controller {
 
 		$admin_comment = Comment::where("id","=","$id")->first();
 		//dd($admin_comment);
+		//$rate = $admin_comment['rate'];
+		//dd($rate);
 		return view('backend.comments.edit',[
 			'admin_comment'=> $admin_comment,
 			'action_method' => 'put'
@@ -108,5 +110,6 @@ class AdminCommentsController extends Controller {
 	{
 		//
 	}
+
 
 }

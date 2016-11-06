@@ -66,7 +66,7 @@
                                 <span class="lbl">{{ $admin_comment->id }}</span>
                             </label>
                         </td>
-                        <td>{{ $admin_comment->rate }}</td>
+                        <td>{{ $admin_comment->getRate($admin_comment->rate) }}</td>
                         <td><a href="{{ $url }}/comments/{{$admin_comment->article_id}}/{{$admin_comment->id}}">{{ str_limit($admin_comment->comment, 80, '...') }}</a></td>
                         <td>{{date('d-m-Y',strtotime($admin_comment->date))}}</td>
                         <td>

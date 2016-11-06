@@ -84,8 +84,12 @@
 
                         <div class="controls">
                             <select id="form-field-select-1">
-                                <option  @if(isset($admin_comment)) value='{{$admin_comment->rate}}' select="selected" @endif />{{$admin_comment->rate}}
-                                <option value="AL" />Alabama
+                                <option  @if(isset($admin_comment)) value='{{$admin_comment->rate}}' select="selected" @endif />{{ $admin_comment->getRate($admin_comment->rate) }}
+                                <option value="1" />Дуже погано
+                                <option value="2" />Погано
+                                <option value="3" />Нормально
+                                <option value="4" />Добре
+                                <option value="5" />Дуже добре
 
                             </select>
 
