@@ -1621,6 +1621,12 @@ form#newsletter input[type=submit] {
 .comments-text{
 	margin-bottom: 20px;
 }
+.sweet-alert button.confirm{
+	background-color: #a64a1a !important;
+}
+.sweet-alert button.confirm:hover{
+	background-color: #6f2a2a !important;
+}
 /*soc icon
 =======================================================================*/
 
