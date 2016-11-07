@@ -1574,6 +1574,14 @@ form#newsletter input[type=submit] {
 	line-height: 27px;
 	font-size: 21px;
 }
+.r-price-services{
+	text-align: center;
+}
+.r-price-services h3 p{
+	font-size: 16px;
+	line-height: 21px;
+	color: #666666;
+}
 #wrapper p{
 	text-indent: 10px;
 	margin: 0 0 5px;

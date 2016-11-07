@@ -59,25 +59,9 @@
 
                     <div class="span3">
 
-                        <div class="testimonials">
+                        <div class="testimonials r-price-services">
 
-                            <h3>
-
-                                <span class="price">
-
-                                    @if (($service -> price) > 0 )
-
-                                       {{ $service -> getTranslate('price') }} {{ trans('base.currency') }}
-
-                                    @else
-
-                                         {{ trans('base.free') }}
-
-                                    @endif
-
-                                </span>
-
-                            </h3>
+                               <h3>{!! $service -> getTranslate('price') !!}</h3>
 
                         </div>
 

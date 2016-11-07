@@ -30,11 +30,9 @@
                     <div class="span4"><h3 class="comments-name">{{ $comment -> user_name }}</h3></div>
                     <div class="span4 center"><h4 class="comments-date"><i class="fa fa-calendar" aria-hidden="true"></i>{{ date('d-m-Y ',strtotime($comment -> date)) }}</h4></div>
                     <div class="span4"><h3 class="comments-rank">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
+                            @for($i = 0; $i < $comment->rate; $i++)
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            @endfor
                     </h3></div>
                 </div>
                 <div class="comments-text">
