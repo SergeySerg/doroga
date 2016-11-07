@@ -136,7 +136,12 @@ $('#comment-send').on('click', function(event){
 				swal ("Ваше повідомлення успішно відправлено!");
 				jQuery("#commenting-form").trigger("reset");
 				window.location.href = '/';
+
+			}else{
+				swal("Будь ласка введіть всі дані!");
+				$("#comment-send").attr('disabled', false);
 			}
+
 		},
 		error:function(data){
 			swal ("Сталася помилка при відправці повідомлення!");

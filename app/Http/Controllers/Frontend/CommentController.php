@@ -50,7 +50,7 @@ class CommentController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		{
+
 			$this->validate($request, [
 				'user_name' => 'required|max:20',
 				'comment' => 'required|max:600',
@@ -61,10 +61,9 @@ class CommentController extends Controller {
 			Comment::create($all);
 			return response()->json([
 				"status" => 'success'
-			//	"redirect" => URL::to('/ua/rooms')
 			]);
 
-		}
+
 	}
 
 	/**

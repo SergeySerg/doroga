@@ -61,21 +61,21 @@
                                 <div class="clearfix">
                                     <label for="name"><span>{{ trans('base.contact.name') }}:</span></label>
                                     <div class="input">
-                                        <input tabindex="1" size="25" id="name" name="user_name" type="text" value="" class="input-xlarge">
+                                        <input tabindex="1" required size="25" id="name" name="user_name" type="text" value="" class="input-xlarge">
                                     </div>
                                 </div>
 
                                 <div class="clearfix">
                                     <label for="phone"><span>{{ trans('base.contact.phone') }}:</span></label>
                                     <div class="input">
-                                        <input tabindex="1" size="25" id="phone" name="user_phone" type="text" value="" class="input-xlarge">
+                                        <input tabindex="1" size="25" id="phone" name="user_phone" type="number" value="" class="input-xlarge">
                                     </div>
                                 </div>
 
                                 <div class="clearfix">
                                     <label for="email"><span>{{ trans('base.contact.mail') }}:</span></label>
                                     <div class="input">
-                                        <input tabindex="2" size="25" id="email" name="user_email" type="text" value="" class="input-xlarge">
+                                        <input tabindex="2" size="25" id="email" name="user_email" type="email" value="" class="input-xlarge">
                                     </div>
                                 </div>
 
@@ -97,7 +97,7 @@
                                 <div class="clearfix">
                                     <label for="message"><span>{{ trans('base.contact.text') }}:</span></label>
                                     <div class="input">
-                                        <textarea tabindex="3" class="input-xlarge" id="message" name="comment" rows="8"></textarea>
+                                        <textarea tabindex="3" class="input-xlarge" id="message" name="comment" required rows="8"></textarea>
                                     </div>
                                 </div>
 

@@ -310,7 +310,7 @@
 
 					}else{
 						swal("Будь ласка введіть всі дані!");
-						$("#submit").attr('disabled', false);
+						$("#comment-send").attr('disabled', false);
 					}
 				},
 				error:function(data){
