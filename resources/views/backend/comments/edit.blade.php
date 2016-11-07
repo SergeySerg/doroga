@@ -85,7 +85,7 @@
                         <div class="controls">
                             <select id="form-field-select-1" name="rate">
                                 @if(isset($admin_comment))
-                                    <option   value='{{$admin_comment->rate}}' select="selected" />{{ $admin_comment->getRate($admin_comment->rate) }}
+                                    <option   value='{{$admin_comment->rate}}' select="selected" />{{ $admin_comment->getRate() }}
                                 @endif
                                 <option value="5">Відмінно</option>
                                 <option value="4">Добре</option>

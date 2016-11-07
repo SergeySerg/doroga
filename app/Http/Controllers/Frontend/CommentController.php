@@ -24,12 +24,23 @@ class CommentController extends Controller {
 	public function index()
 	{
 		$meta = view()->share('meta', Article::where('name', '=', 'meta.comments')->first());
-		$comments = Comment::where('active', '1')
+
+		$article = Category::where('link','comments')
+			->first()
+			->articles
+			->first();
+
+		$comments = $article
+			->comments()
+			->where('active', '1')
 			->get()
 			->sortByDesc("date");
+		if (isset($comment['date']))
+			$comments['date'] = date('Y-m-d H:i:s',strtotime($comments['date']));
 		return view('frontend.comments', [
 			'comments' => $comments,
-			'meta' => $meta
+			'meta' => $meta,
+			'article' => $article
 		]);
 	}
 
@@ -54,16 +65,15 @@ class CommentController extends Controller {
 			$this->validate($request, [
 				'user_name' => 'required|max:20',
 				'comment' => 'required|max:600',
-
 			]);
 			$all = $request->all();
-
+			$all['date'] = '';
+			$all['date'] = date('Y-m-d H:i:s',strtotime('now'));
+		//dd($all);
 			Comment::create($all);
 			return response()->json([
 				"status" => 'success'
 			]);
-
-
 	}
 
 	/**

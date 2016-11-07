@@ -106,6 +106,7 @@
                                 </div>
 
                             </div>
+                            <input type="hidden" name="article_id" value='{{$article->id}}'/>
                             <input type="hidden" name="_method" value='post'/>
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 

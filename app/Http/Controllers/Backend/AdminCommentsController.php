@@ -33,6 +33,9 @@ class AdminCommentsController extends Controller {
 		//$admin_comments = Comment::all()
 		$admin_comments = Comment::where('article_id', '=', $article_id)->get()
 		->sortByDesc("priority");
+		if (isset($admin_comments['date']))
+			$admin_comments['date'] = date('Y-m-d H:i:s',strtotime($admin_comments['date']));
+
 			//dd($admin_comments);
 		return view('backend.comments.list',[
 			'admin_comments' => $admin_comments,
@@ -66,6 +69,8 @@ class AdminCommentsController extends Controller {
 
 		]);
 		$all = $request->all();
+		if (isset($all['date']))
+			$all['date'] = date('Y-m-d H:i:s',strtotime($all['date']));
 		Comment::create($all);
 		return response()->json([
 			"status" => 'success',
@@ -95,6 +100,8 @@ class AdminCommentsController extends Controller {
 	{
 
 		$admin_comment = Comment::where("id","=","$id")->first();
+		if (isset($admin_comments['date']))
+			$admin_comments['date'] = date('Y-m-d H:i:s',strtotime($admin_comments['date']));
 		return view('backend.comments.edit',[
 			'admin_comment'=> $admin_comment,
 			'action_method' => 'put',
@@ -112,6 +119,8 @@ class AdminCommentsController extends Controller {
 	{
 		$admin_comment = Comment::where("id","=","$id")->first();
 		$all = $request->all();
+		if (isset($all['date']))
+			$all['date'] = date('Y-m-d H:i:s',strtotime($all['date']));
 		$admin_comment->update($all);
 		$admin_comment->save();
 		return response()->json([

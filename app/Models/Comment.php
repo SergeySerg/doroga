@@ -16,11 +16,11 @@ class Comment extends Translate {
         'active'
     ];
 
-    public function articles(){
+    public function article(){
         return $this->belongsTo('App\Models\Article');
     }
-    public function getRate($rate){
-        switch ($rate){
+    public function getRate(){
+        switch ($this->rate){
             case '5': $rate = 'Відмінно';
                 return $rate;
                 break;

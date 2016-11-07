@@ -135,7 +135,7 @@ $('#comment-send').on('click', function(event){
 			if(data.status == 'success'){
 				swal ("Ваше повідомлення успішно відправлено!");
 				jQuery("#commenting-form").trigger("reset");
-				window.location.href = '/';
+
 
 			}else{
 				swal("Будь ласка введіть всі дані!");
