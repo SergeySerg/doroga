@@ -79,7 +79,7 @@
                     <div class="span12">
 
                         {{-- start: Carousel --}}
-                        @if(count($room -> getImages()) > 0)
+                        @if(count($room -> getImages()) > 1)
 
                             <div id="webstudio-carousel-{{ $room -> id }}" class="webstudio-carousel" style="display:none;">
 

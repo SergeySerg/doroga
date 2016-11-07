@@ -70,7 +70,7 @@
                     <div class="span12">
 
                         {{-- start: Carousel --}}
-                        @if(count($service -> getImages()) > 0)
+                        @if(count($service -> getImages()) > 1)
 
                             <div id="webstudio-carousel-{{ $service -> id }}" class="webstudio-carousel" style="display:none;">
 
