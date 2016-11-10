@@ -46,7 +46,7 @@ Route::post('/contact', function(){
 
 
 		Mail::send('emails.letter', $data, function($message) use ($user) {
-			$message->to('webtestingstudio@gmail.com', 'Дорога додому')->subject('Повідомлення з сайту "Дорога додому" ');
+			$message->to('nila2927@yandex.ru', 'Дорога додому')->subject('Повідомлення з сайту "Дорога додому" ');
 		});
 		return response()->json([
 			"status" => 'success'
