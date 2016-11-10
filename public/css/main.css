@@ -1726,6 +1726,7 @@ header{
 	overflow:hidden;
 	margin:0; padding:0;
 	list-style:none;
+	padding-left: 48px;
 }
 
 .soc li {
@@ -1776,7 +1777,7 @@ header{
 
 .soc a:hover {
 	z-index: 2;
-	background-color:#ba5e2e !important;
+	background-color:#2e5f21 !important;
 }
 
 .soc-icon-last{
