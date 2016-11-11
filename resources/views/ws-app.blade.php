@@ -75,8 +75,7 @@
 
 
 			{{--start: Navigation --}}
-			<div class="span1"></div>
-			<div class="span10">
+			<div class="span12">
 
 				<div class="navbar navbar-inverse">
 
