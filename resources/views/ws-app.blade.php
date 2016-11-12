@@ -2,16 +2,20 @@
 <html lang="{{ App::getLocale() }}" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
-	<title>Дорога додому</title>
+	<title>
+		@if($meta ->getTranslate('meta_title'))
+			{{ $meta ->getTranslate('meta_title') }}
+		@else Дорога додому
+		@endif
+	</title>
 
-	<meta name="title" content="{{ $meta ->getTranslate('meta_title') }}">
-	<meta name="description" content="{{ $meta ->getTranslate('meta_description') }}">
-	<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
-
+	@if(isset($meta))
+		<meta name="description" content="{{ $meta ->getTranslate('meta_description') }}">
+		<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
+	@endif
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="path/to/image.jpg">
 
 	<link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
