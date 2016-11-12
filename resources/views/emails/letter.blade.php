@@ -1,12 +1,3 @@
-<!--Бронювання <strong>{{ $room }}</strong>,<br>
-Кількість дітей <strong>{{ $quantityсhildren }}</strong>,<br>
-Кількість дорослих <strong>{{ $quantityadult }}</strong>,<br>
-Дата заїзду <strong>{{ $data_from  }}</strong> Дата виїзду<strong>{{ $data_to }}</strong>,<br>
-Забронював: <strong> {{ $name }}</strong>,<br>
-Email - <strong>{{ $email }}</strong>,<br>
-Телефон - <strong>{{ $tel }}</strong>,<br>
-Коментар: <strong><em>{{ $message_body }}</em></strong>.-->
-
 <table style="font-family:Arial, Helvetica, sans-serif;
 	color:#666;
 	font-size:16px;

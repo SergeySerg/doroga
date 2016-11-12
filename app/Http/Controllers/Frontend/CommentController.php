@@ -7,7 +7,7 @@ use App\Http\Controllers\Frontend;
 //use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
-
+use Mail;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Lang;
@@ -69,8 +69,11 @@ class CommentController extends Controller {
 			$all = $request->all();
 			$all['date'] = '';
 			$all['date'] = date('Y-m-d H:i:s',strtotime('now'));
-		//dd($all);
 			Comment::create($all);
+			//Отправка уведомления про добавления нового отзыва на email
+			Mail::send('emails.comment', $all, function($message){
+				$message->to('webtestingstudio@gmail.com', 'Дорога додому')->subject('Повідомлення про новий відгук з сайту "Дорога додому" ');
+			});
 			return response()->json([
 				"status" => 'success'
 			]);
