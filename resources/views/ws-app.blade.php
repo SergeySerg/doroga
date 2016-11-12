@@ -2,16 +2,20 @@
 <html lang="{{ App::getLocale() }}" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
-	<title>Дорога додому</title>
+	<title>
+		@if($meta ->getTranslate('meta_title'))
+			{{ $meta ->getTranslate('meta_title') }}
+		@else Дорога додому
+		@endif
+	</title>
 
-	<meta name="title" content="{{ $meta ->getTranslate('meta_title') }}">
-	<meta name="description" content="{{ $meta ->getTranslate('meta_description') }}">
-	<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
-
+	@if(isset($meta))
+		<meta name="description" content="{{ $meta ->getTranslate('meta_description') }}">
+		<meta name="keywords" content="{{ $meta ->getTranslate('meta_keywords') }}">
+	@endif
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="path/to/image.jpg">
 
 	<link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
@@ -66,16 +70,16 @@
 		{{--start: Row --}}
 		<div class="row">
 
-			{{--start: Logo --}}
-			<div class="logo span3">
 
-				<a class="brand" href="/{{ App::getLocale() }}"><img src="{{ asset('/img/frontend/logo.png') }}" alt="Logo"></a>
+			<div class="span12 logo-adaptive">
+
+					<a class="brand" href="/ua"><img src="/img/frontend/logo.png" alt="Logo"></a>
 
 			</div>
-			{{--end: Logo --}}
+
 
 			{{--start: Navigation --}}
-			<div class="span9">
+			<div class="span12">
 
 				<div class="navbar navbar-inverse">
 
@@ -91,12 +95,13 @@
 
 							<ul class="nav">
 
-								<li @if(Request::is('ua')) class="active"@endif><a href="/{{ App::getLocale() }}">{{ trans('base.hotel') }}</a></li>
-								<li @if(Request::is('*/rooms'))class="active"@endif><a href="/{{ App::getLocale() }}/rooms">{{ trans('base.rooms') }}</a></li>
-								<li @if(Request::is('*/services'))class="active"@endif><a href="/{{ App::getLocale() }}/services">{{ trans('base.services') }}</a></li>
-								<li @if(Request::is('*/gallery'))class="active"@endif><a href="/{{ App::getLocale() }}/gallery">{{ trans('base.gallery') }}</a></li>
-								<li @if(Request::is('*/comments'))class="active"@endif><a href="/{{ App::getLocale() }}/comments">{{ trans('base.comments') }}</a></li>
-								<li @if(Request::is('*/contact'))class="active"@endif><a href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a></li>
+								<li @if(Request::is('ua')) class="active"@endif><a href="/{{ App::getLocale() }}"><i class="fa fa-home"></i><br>{{ trans('base.hotel') }}</a></li>
+								<li @if(Request::is('*/rooms'))class="active"@endif><a href="/{{ App::getLocale() }}/rooms"><i class="fa fa-hospital-o"></i><br>{{ trans('base.rooms') }}</a></li>
+								<li @if(Request::is('*/services'))class="active"@endif><a href="/{{ App::getLocale() }}/services"><i class="fa fa-credit-card-alt"></i><br>{{ trans('base.services') }}</a></li>
+								<li class="r-logo"><a href="/{{ App::getLocale() }}?ver1"><img src="/img/frontend/logo.png" alt="Logo"></a></li>
+								<li @if(Request::is('*/gallery'))class="active"@endif><a href="/{{ App::getLocale() }}/gallery"><i class="fa fa-camera"></i><br>{{ trans('base.gallery') }}</a></li>
+								<li @if(Request::is('*/comments'))class="active"@endif><a href="/{{ App::getLocale() }}/comments"><i class="fa fa-book"></i><br>{{ trans('base.comments') }}</a></li>
+								<li @if(Request::is('*/contact'))class="active"@endif><a href="/{{ App::getLocale() }}/contact"><i class="fa fa-envelope"></i><br>{{ trans('base.contacts') }}</a></li>
 
 							</ul>
 
@@ -138,11 +143,11 @@
 		<div class="row">
 
 			{{-- start: Footer Menu Logo --}}
-			<div class="span2">
+			<div class="span3">
 
 				<div id="footer-menu-logo">
 
-					<a href="/{{ App::getLocale() }}"><img src="{{ asset('/img/frontend/logo.png') }}" alt="logo" /></a>
+					<a href="/{{ App::getLocale() }}"><img src="{{ asset('/img/frontend/logo-width4.png') }}" alt="logo" /></a>
 
 				</div>
 
@@ -152,7 +157,7 @@
 			<div class="span1"></div>
 
 			{{-- start: Footer Menu Links--}}
-			<div class="span8">
+			<div class="span7">
 
 				<div id="footer-menu-links">
 
