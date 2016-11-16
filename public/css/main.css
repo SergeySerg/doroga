@@ -1642,8 +1642,11 @@ form#newsletter input[type=submit] {
 header{
 	height: auto !important;
 }
+.r-right{
+	text-align: right;
+}
 .r-logo{
-	margin-top: -95px;
+	margin-top: -132px;
 }
 .r-logo,
 .r-logo li a,
@@ -1655,7 +1658,7 @@ header{
 	width: 250px;
 }
 .navbar .nav{
-	margin-top: 90px;
+	margin-top: 35px;
 	float: left;
 	margin-right: 45px;
 }

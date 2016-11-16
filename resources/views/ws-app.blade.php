@@ -69,6 +69,20 @@
 
 		{{--start: Row --}}
 		<div class="row">
+			<div class="span4">
+				<div class="title">
+					<h3>{{ $texts->get('header.tel1') }} <br>
+					{{ $texts->get('header.tel2') }}</h3>
+				</div>
+			</div>
+			<div class="span4"></div>
+			<div class="span4">
+				<div class="title r-right">
+					<h3>{!! mb_substr($texts->get('header.address'), -40) !!}</h3>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 
 
 			<div class="span12 logo-adaptive">

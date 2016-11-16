@@ -104,6 +104,12 @@ jQuery(document).ready(function($){
 		slider_textpanel_bg_opacity: 0.4,
 		slider_enable_bullets: false,
 	});
+
+	$('.main-img').on('click', function(){
+		$(this).parent().find('.webstudio-carousel .ug-carousel-wrapper .ug-carousel-inner .ug-tile-clickable').first().trigger('click');
+
+	});
+
 	/* END raund script-------------------------------------------------------*/
 
 	$('.date-picker').datepicker().next().on('click', function(){
