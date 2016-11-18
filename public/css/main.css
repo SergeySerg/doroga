@@ -1580,11 +1580,13 @@ form#newsletter input[type=submit] {
 }
 .r-price table td{
 	border: none;
+	text-align: center;
 }
 .r-price table td:last-child{
 	line-height: 27px;
 	font-size: 21px;
 	font-family: "Neucha";
+	text-align: right;
 }
 .r-price-services{
 	text-align: center;
