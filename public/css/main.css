@@ -1574,6 +1574,18 @@ form#newsletter input[type=submit] {
 	line-height: 27px;
 	font-size: 21px;
 }
+.r-price table{
+	width: 100% !important;
+	border: none;
+}
+.r-price table td{
+	border: none;
+}
+.r-price table td:last-child{
+	line-height: 27px;
+	font-size: 21px;
+	font-family: "Neucha";
+}
 .r-price-services{
 	text-align: center;
 }

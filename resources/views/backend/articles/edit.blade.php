@@ -107,13 +107,24 @@
                                 @foreach($langs as $lang)
                                     <div id="{{$lang->lang}}" @if(($lang->lang) == 'ua') class="tab-pane in active" @else class="tab-pane" @endif>
                                     @if($admin_category->hasField('price'))
-                                    <div class="control-group">
-                                        <label class="control-label" for="form-field-1">Ціна</label>
 
-                                        <div class="controls">
-                                            <input type="text" id="form-field-1" name="price_{{$lang->lang}}" @if(isset($admin_article)) value='{{$admin_article->getTranslate('price',$lang->lang) }}'@endif  />
-                                        </div>
-                                    </div>
+                                            <h4 class="header blue clearfix">Ціна</h4>
+
+                                            <div class="control-group">
+
+                                                <textarea name="price_{{$lang->lang}}" class="span12" >@if(isset($admin_article)){{ $admin_article->getTranslate('price',$lang->lang) }}@endif</textarea>
+
+                                            </div>
+
+                                            {{--
+                                                                                <div class="control-group">
+                                                                                    <label class="control-label" for="form-field-1">Ціна</label>
+
+                                                                                    <div class="controls">
+                                                                                        <input type="text" id="form-field-1" name="price_{{$lang->lang}}" @if(isset($admin_article)) value='{{$admin_article->getTranslate('price',$lang->lang) }}'@endif  />
+                                                                                    </div>
+                                                                                </div>
+                                            --}}
                                     @endif
                                     @if($admin_category->hasField('title'))
                                         <div class="control-group">
