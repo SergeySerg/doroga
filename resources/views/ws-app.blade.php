@@ -231,12 +231,12 @@
 
 			<ul class="soc">
 
-				<li><a class="soc-facebook" href="https://facebook.com"></a></li>
+				<li><a class="soc-facebook" href="{{ $texts->get('footer.fb') }}"></a></li>
 {{--
 				<li><a class="soc-odnoklassniki" href="https://ok.ru/"></a></li>
---}}
-				<li><a class="soc-vkontakte soc-icon-last" href="https://vk.com"></a></li>
 
+				<li><a class="soc-vkontakte soc-icon-last" href="https://vk.com"></a></li>
+--}}
 			</ul>
 			{{-- end: Follow Us --}}
 
