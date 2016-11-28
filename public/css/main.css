@@ -393,7 +393,7 @@ html[xmlns] .slides {display: block;}
 ====================================================================== */
 
 .hero-unit {
-	background: #fff url(../img/bg-k10.png);
+	background: #fff url(../img/frontend/bg-k10.png);
 	border-left: 4px solid #4e8244;
 	padding: 13px 13px 13px 15px;
 	font-style: italic;
@@ -1695,6 +1695,10 @@ header{
 }
 .logo-adaptive{
 	display: none;
+}
+.hero-unit h3{
+	color: #4e8244;
+	padding-left: 10px;
 }
 @media (max-width: 978px) {
 	.r-logo{

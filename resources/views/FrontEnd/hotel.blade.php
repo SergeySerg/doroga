@@ -50,6 +50,25 @@
 
             <div class="span12">
 
+                {{-- start: Sale --}}
+                <div class="hero-unit">
+
+                    <h3>{{ trans('base.sale') }}</h3>
+                    {!!  $texts->get('main.sale') !!}
+
+                </div>
+                {{-- end: Sale --}}
+
+            </div>
+
+        </div>
+        {{--end: Row--}}
+
+        {{--start: Row --}}
+        <div class="row">
+
+            <div class="span12">
+
                 {{-- start: About Us --}}
                 <div id="about">
 
