@@ -221,7 +221,7 @@ class AdminArticlesController extends Controller {
 			"redirect" => URL::to('/admin30x5/articles/'.$type)
 		]);
 	}
-	//Функция формирования массива типа (ua|ru|en)
+	//Функция формирования массива типа (ua@|;ru@|;en)
 	private function prepareArticleData($all){
 		$langs = Lang::all();
 		$all['price'] = '';
@@ -234,15 +234,15 @@ class AdminArticlesController extends Controller {
 		foreach($all as $key => $value){
 			$all[$key] = trim($value);
 		}
-		//Формирование массива типа (ua|ru|en)
+		//Формирование массива типа (ua@|;ru@|;en)
 		foreach($langs as $lang){
-			//$all['price'] .= $all["price_{$lang['lang']}"] .'|';
-			$all['price'] .= (isset($all["price_{$lang['lang']}"]) ? $all["price_{$lang['lang']}"] : '') .'|';
-			$all['title'] .= $all["title_{$lang['lang']}"] .'|';
-			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
-			$all['meta_title'] .= (isset($all["meta_title_{$lang['lang']}"]) ? $all["meta_title_{$lang['lang']}"] : '') .'|';
-			$all['meta_description'] .= (isset($all["meta_description_{$lang['lang']}"]) ? $all["meta_description_{$lang['lang']}"] : '') .'|';
-			$all['meta_keywords'] .= (isset($all["meta_keywords_{$lang['lang']}"]) ? $all["meta_keywords_{$lang['lang']}"] : '') .'|';
+			//$all['price'] .= $all["price_{$lang['lang']}"] .'@|;';
+			$all['price'] .= (isset($all["price_{$lang['lang']}"]) ? $all["price_{$lang['lang']}"] : '') .'@|;';
+			$all['title'] .= $all["title_{$lang['lang']}"] .'@|;';
+			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'@|;';
+			$all['meta_title'] .= (isset($all["meta_title_{$lang['lang']}"]) ? $all["meta_title_{$lang['lang']}"] : '') .'@|;';
+			$all['meta_description'] .= (isset($all["meta_description_{$lang['lang']}"]) ? $all["meta_description_{$lang['lang']}"] : '') .'@|;';
+			$all['meta_keywords'] .= (isset($all["meta_keywords_{$lang['lang']}"]) ? $all["meta_keywords_{$lang['lang']}"] : '') .'@|;';
 			//Удаление переменных типа title_ua,title_ru,title_en и т. д.
 			unset($all["price_{$lang['lang']}"]);
 			unset($all["title_{$lang['lang']}"]);
