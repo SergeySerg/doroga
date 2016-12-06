@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' =>"webtestingstudio@gmail.com" , 'name' => "Premium Club"],
+	'from' => ['address' =>"info@doroga-dodomu.com.ua" , 'name' => "Дорога додому"],
 
 	/*
 	|--------------------------------------------------------------------------
