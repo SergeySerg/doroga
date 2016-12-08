@@ -41,7 +41,7 @@
 
                         @if(count($service -> getImages()) > 0)
 
-                            <div class="circle-color main-img" style="background-image: url('/{{ $service -> getImages()[0]['min'] }}');"></div>
+                            <div class="circle-color main-img" data-image="/{{ $service -> getImages()[0]['min'] }}" style="background-image: url('/{{ $service -> getImages()[0]['min'] }}');"></div>
 
                         @else
 
@@ -67,10 +67,12 @@
 
                     </div>
 
-                    <div class="span12">
+                    <div class="span12" @if(count($service -> getImages()) == 1) style="visibility: hidden;margin-top: -121px;" @endif>
 
                         {{-- start: Carousel --}}
+{{--
                         @if(count($service -> getImages()) > 1)
+--}}
 
                             <div id="webstudio-carousel-{{ $service -> id }}" class="webstudio-carousel" style="display:none;">
 
@@ -83,7 +85,9 @@
 
                             </div>
 
+{{--
                         @endif
+--}}
                         {{-- end: Carousel --}}
 
                     </div>

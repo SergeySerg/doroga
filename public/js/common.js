@@ -60,9 +60,14 @@ jQuery(document).ready(function($){
 		})();
 
 	$('.webstudio-carousel').each(function(){
+		var cnt = $(this).find('img').length;
+		var tileWidth = 75;
+		var betweenTiles = 20;
+		var galWidth = tileWidth*cnt+betweenTiles*(cnt-1);
 		$(this).unitegallery({
 			gallery_theme: "carousel",
-			tile_width: 75,						//tile width
+			tile_width: tileWidth,
+			gallery_width: cnt > 10 ? "100%" : galWidth,
 			tile_height: 75,						//tile height
 			tile_enable_border:true,			//enable border of the tile
 			tile_border_width:3,				//tile border width
@@ -70,6 +75,9 @@ jQuery(document).ready(function($){
 			tile_border_radius:0,
 			tile_enable_outline: false,
 			theme_enable_navigation: false,
+			carousel_autoplay: cnt > 10 ? true : false,
+			carousel_navigation_numtiles:3,
+			carousel_space_between_tiles: betweenTiles,
 		});
 	});
 
@@ -106,9 +114,14 @@ jQuery(document).ready(function($){
 	});
 	/* END raund script-------------------------------------------------------*/
 
+	$('.main-img').on('click', function () {
+		var srcImg = $(this).attr('data-image');
+		if(srcImg)
+			$('.webstudio-carousel').find("img[src='" + srcImg + "']").trigger('click');
+	});
+
 	$('.date-picker').datepicker().next().on('click', function(){
 		$(this).prev().focus();
-		
 	});
 	/* Start script for booking */
 	$('.book').click(function(){

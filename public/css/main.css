@@ -1518,6 +1518,9 @@ form#newsletter input[type=submit] {
 	background-position: center;
 	background-size: cover;
 }
+.services-wrap .center .main-img:hover {
+	cursor: pointer;
+}
 .webstudio-carousel,
 .webstudio-gallery{
 	margin-bottom: 20px;

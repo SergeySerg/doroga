@@ -40,7 +40,7 @@
 
                         @if(count($room -> getImages()) > 0)
 
-                            <div class="circle-color main-img" style="background-image: url('/{{ $room -> getImages()[0]['min'] }}');"></div>
+                            <div class="circle-color main-img" data-image="/{{ $room -> getImages()[0]['min'] }}" style="background-image: url('/{{ $room -> getImages()[0]['min'] }}');"></div>
 
                         @else
 
